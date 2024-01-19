@@ -4,7 +4,7 @@
 A weather app specifially designed for travellers 
 
 ### Description
-A travel app that integrates weather forecasts with the closest tourist attractions and hotels to make sure travelers are always prepared for the weather conditions. 
+This app is a planning tool that keeps travelers informed and prepared for their travels. This app combines real-time weather information from RainViewer with TripAdvisor reviews for hotels, restaurants, and attractions in Vancouver, BC.
 
 
 ### Team members
