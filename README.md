@@ -11,7 +11,7 @@ This app is a planning tool that keeps travelers informed and prepared for their
 Giovana Birck, Hayden Leung, Kaitlyn Cameron, Sara Shiojima
 
 ### APIs
-[Tripadvisor for Developers] (https://developer-tripadvisor.com/home/)
+[Tripadvisor for Developers](https://developer-tripadvisor.com/home/)
 [Rain Viewer](https://www.rainviewer.com/api.html)
 
 ## Installations 
