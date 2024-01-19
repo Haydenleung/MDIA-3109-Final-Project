@@ -1,7 +1,7 @@
 # MDIA-3109-Final-Project
 
 ## Topic
-A weather app specifially designed for travelers 
+A weather app specifially designed for travellers 
 
 ### Description
 A travel app that integrates weather forecasts with the closest tourist attractions and hotels to make sure travelers are always prepared for the weather conditions. 
