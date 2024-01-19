@@ -11,5 +11,5 @@ A travel app that integrates weather forecasts with the closest tourist attracti
 Giovana Birck, Hayden Leung, Kaitlyn Cameron, Sara Shiojima
 
 ### APIs
-[Tripadvisor for Developers](https://developer-tripadvisor.com/home/)
+[Tripadvisor for Developers] (https://developer-tripadvisor.com/home/)
 [Rain Viewer] (https://www.rainviewer.com/api.html)
