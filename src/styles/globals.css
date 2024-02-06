@@ -4,8 +4,11 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --white: 250, 250, 250;
+  --primary-blue: 38, 168, 171;
+  --dark-grey: 84, 84, 84;
+  --light-grey: 182, 182, 182;
+  --primary-red: 219, 127, 115;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,16 +21,101 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--white));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.logo {
+  font-size: 18px;
+  color: rgb(var(--primary-blue));
+}
+
+.weather-homepage {
+  font-size: 32px;
+}
+
+.head-activities {
+  font-size: 32px;
+  text-align: center;
+}
+
+.head-activity {
+  font-size: 32px;
+}
+
+.info-activity {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 3em;
+}
+
+.h2-activity {
+  font-size: 24px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.question-homepage {
+  color: rgb(var(--dark-grey));
+}
+
+.primary-button {
+  background-color: rgb(var(--primary-red));
+  padding: 14px;
+  border-radius: 4px;
+  color: rgb(var(--white));
+  font-size: 18px;
+}
+
+.secondary-button {
+  color: rgb(var(--primary-red));
+  padding: 12px;
+  border-radius: 4px;
+  border-color: rgb(var(--primary-red));
+  border-width: 1px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.tertiary-button {
+  color: rgb(var(--dark-grey));
+  font-size: 12px;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.current-weather-text {
+  font-size: 12px;
+  text-align: center;
+}
+
+hr {
+  margin: 16px 0px 16px 0px;
+}
+
+.activities-card {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(var(--light-grey));
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.bottom-card {
+  padding: 16px;
 }
