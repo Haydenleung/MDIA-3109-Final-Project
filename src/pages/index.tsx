@@ -10,7 +10,7 @@ export default function Home() {
       <div>
         <h2 className="weather-homepage">
           It's currently <br/> 
-          [dynamic weather] <br/>
+           <br/>
           in Vancouver,BC
         </h2>
       </div>
