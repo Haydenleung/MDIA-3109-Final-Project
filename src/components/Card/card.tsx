@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({ onLocationNameChange }) => {
                 if (response.ok) {
                     const data = await response.json();
                     setLocations(data.data);
-                    // Notify parent component of the first location name
+                   
                     if (data.data.length > 0) {
                         onLocationNameChange(data.data[0].name);
                     }

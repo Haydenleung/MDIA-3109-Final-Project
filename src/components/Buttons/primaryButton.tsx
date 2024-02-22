@@ -1,9 +1,10 @@
 import Image from "next/image";
 
-export default function PrimaryButton() {
+export default function PrimaryButton({title}) {
     return (
       <>
         <div className="primary-button">
+          
           {/* Dynamic Icon  */}
           {/* <Image
               src={}
@@ -13,7 +14,7 @@ export default function PrimaryButton() {
           /> */}
 
           {/* Dynamic content  */}
-          <h3>Outdoor Activities</h3>
+         {title}
       </div>
     </>
   );

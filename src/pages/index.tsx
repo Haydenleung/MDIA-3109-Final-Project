@@ -1,6 +1,7 @@
-import Image from "next/image";
-import Header from '../components/Header'
+import React from 'react';
+import Header from '../components/Header';
 import PrimaryButton from "@/components/Buttons/primaryButton";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <h2 className="weather-homepage">
           It's currently <br/> 
            <br/>
-          in Vancouver,BC
+          in Vancouver, BC
         </h2>
       </div>
 
@@ -22,10 +23,15 @@ export default function Home() {
 
       <div className="question-container">
         <h3 className="question-homepage">What are you planning for today?</h3>
-        <PrimaryButton/>
-        <PrimaryButton/>
+        
+        <Link href="/indoor">
+          <PrimaryButton title="Indoor Activities" /> 
+        </Link>
+      
+        <Link href="/outdoor">
+          <PrimaryButton title="Outdoor Activities" />
+        </Link>
       </div>
-
     </main>
   );
 }

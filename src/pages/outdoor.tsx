@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Card from '@/components/Card/card';
 
-const Outdoors = () => {
+export default function Outdoors() {
     const [locationName, setLocationName] = useState("");
 
     const handleLocationNameChange = (name: string) => {
@@ -9,12 +9,12 @@ const Outdoors = () => {
     };
 
     return (
-        <div>
-            <h1>Outdoor Activities</h1>
-            <Card onLocationNameChange={handleLocationNameChange} />
-            {locationName && <p>Location: {locationName}</p>}
-        </div>
+        <main>
+            <div>
+                <h1>Outdoor Activities</h1>
+                <Card onLocationNameChange={handleLocationNameChange} />
+                {locationName && <p>Location: {locationName}</p>}
+            </div>
+        </main>
     );
 }
-
-export default Outdoors;
