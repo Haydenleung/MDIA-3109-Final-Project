@@ -15,6 +15,8 @@ Giovana Birck, Hayden Leung, Kaitlyn Cameron, Sara Shiojima
 [OpenWeatherMap](https://openweathermap.org/)
 
 ## Installations 
+- npm install axios
+
 
 ### Cypress
 
@@ -27,7 +29,4 @@ npm install cypress --save-dev
 3. Open app
 npx cypress open
 
-
-## Weather API Key
-[0add98044a12afcd463bc2e26aa52e22]
 

@@ -1,11 +1,11 @@
-import React from 'react';
-import Header from '../components/Header';
+import React from "react";
+import Header from "../components/Header";
 import PrimaryButton from "@/components/Buttons/primaryButton";
 import Link from "next/link";
-import { useState } from 'react';
+import { useState } from "react";
+import Weather from "@/components/Weather";
 
 export default function Home() {
-
   const [temp, setTemp] = useState<string>("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,8 +15,7 @@ export default function Home() {
   const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTemp("");
-  }
-
+  };
 
   return (
     <main className={`flex min-h-screen flex-col p-8`}>
@@ -24,22 +23,27 @@ export default function Home() {
 
       <div>
         <h2 className="weather-homepage">
-          It's currently <br />
+          It's currently
+          <div>
+            <Weather />
+          </div>
+          <br />
           <br />
           in Vancouver, BC
         </h2>
-      </div>
-
-      <div>
-        {/* dynamic illustration  */}
-        {/* dynamic weather information  */}
       </div>
 
       <div className="question-container">
         <h3 className="question-homepage">What are you planning for today?</h3>
 
         <form onSubmit={onFormSubmit} className={"searchForm"}>
-          <input type="text" onChange={handleChange} value={temp} className={"search"} placeholder={"City, country, or any location..."} />
+          <input
+            type="text"
+            onChange={handleChange}
+            value={temp}
+            className={"search"}
+            placeholder={"City, country, or any location..."}
+          />
           <button type="submit" className={"button"} />
         </form>
 
