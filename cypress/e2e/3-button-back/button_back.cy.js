@@ -1,3 +1,5 @@
+// work further to specify it's a back button and should go back to 'http://localhost:3000/main?location=Vancouver'
+
 context('Vancouver Activities', () => {
 
     it("has a back button on the outdoor activities's page", () => {
@@ -13,5 +15,3 @@ context('Vancouver Activities', () => {
     })
 
 })
-
-// work further to specify it's a back button and should go back to 'http://localhost:3000/main?location=Vancouver'
