@@ -19,8 +19,8 @@ export default function Weather({ location }: { location: any }) {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   useEffect(() => {
-    
-   
+
+
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
 
     async function fetchWeather() {
