@@ -1,3 +1,5 @@
+type WeatherCondition = 'Clear' | 'Clouds' | 'Rain' | 'Snow' | 'Thunderstorm' ;
+
 export interface WeatherMain {
     temp: number;
     feels_like: number;
@@ -5,8 +7,9 @@ export interface WeatherMain {
   }
   
   export interface WeatherDescription {
+    main: WeatherCondition;
     description: string;
-    icon: string; 
+    icon: string;
   }
 
   export interface WeatherWind {

@@ -23,13 +23,11 @@ export default function Home() {
 
       <div>
         <h2 className="weather-homepage">
-          It's currently
+          In Vancouver, BC it's currently:
           <div>
             <Weather />
           </div>
-          <br />
-          <br />
-          in Vancouver, BC
+          
         </h2>
       </div>
 
