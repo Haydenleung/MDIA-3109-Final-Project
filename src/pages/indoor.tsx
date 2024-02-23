@@ -41,7 +41,7 @@ export const getServerSideProps: GetServerSideProps<IndoorProps> = async (contex
 
 const Indoor = ({ locations }: IndoorProps) => {
 
-    const [locationName, setLocationName] = useState("");
+    const [locationName, setLocationName] = useState<string>("");
 
     const handleLocationNameChange = (name: string) => {
         setLocationName(name);

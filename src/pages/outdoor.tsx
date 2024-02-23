@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (conte
 
 const Outdoor = ({ locations }: OutdoorProps) => {
 
-    const [locationName, setLocationName] = useState("");
+    const [locationName, setLocationName] = useState<string>("");
 
     const handleLocationNameChange = (name: string) => {
         setLocationName(name);
