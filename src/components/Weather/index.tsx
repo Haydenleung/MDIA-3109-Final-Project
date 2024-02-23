@@ -14,12 +14,13 @@ const weatherIcon = {
   Snow: "snow.svg",
   Thunderstorm: "thunderstorm.svg",
 };
-
+const apiKey = process.env.NEXT_PUBLIC_API_WEATHER
 export default function Weather({ location }: { location: any }) {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   useEffect(() => {
-    const apiKey = "0add98044a12afcd463bc2e26aa52e22";
+    
+   
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
 
     async function fetchWeather() {
