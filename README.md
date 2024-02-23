@@ -1,7 +1,7 @@
 # MDIA-3109-Final-Project
 
 ## Topic
-A weather app specifially designed for travellers in Vancouver 
+An app specifically designed to help travelers find activities based on the weather outside.
 
 ### Description
 This app is a planning tool that keeps travelers informed and prepared for their travels. This app combines real-time weather information from RainViewer with TripAdvisor reviews for hotels, restaurants, and attractions in Vancouver, BC.
