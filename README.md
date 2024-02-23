@@ -31,5 +31,5 @@ npx cypress open
 
 
 ## Icons 
-(Adobe Stock)[https://stock.adobe.com/ca/images/hand-drawn-sketch-doodle-vector-line-weather-element-colour-icon-set-on-white-eps10/204668463?asset_id=204668463]
+[Adobe Stock](https://stock.adobe.com/ca/images/hand-drawn-sketch-doodle-vector-line-weather-element-colour-icon-set-on-white-eps10/204668463?asset_id=204668463)
 
