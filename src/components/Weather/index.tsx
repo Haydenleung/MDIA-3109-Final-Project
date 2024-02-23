@@ -69,8 +69,7 @@ const getWeatherIcon = (weather: WeatherCondition) => {
                 .join(" ")}
             </p>
             <p>Wind speed: {(weatherData.wind.speed * 3.6).toFixed(2)} km/h</p>
-            <p>Humidity level: {weatherData.main.humidity}%</p>
-            <p>Visibility: {weatherData.clouds.all}%</p>
+            <p>Humidity: {weatherData.main.humidity}%</p>
           </div>
 
           <div className={styles.sunrise_sunset_data}>
