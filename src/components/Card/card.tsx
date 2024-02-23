@@ -13,7 +13,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ locations }) => {
     return (
         <div>
-            {locations.map(location => (
+            {locations.slice(0,5).map(location => (
                 <div key={location.location_id} className="location-card">
                     <h2>Location ID: {location.location_id}</h2>
                     <h3>Name: {location.name}</h3>
