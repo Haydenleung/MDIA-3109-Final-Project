@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import Card from '@/components/Card/card';
+import Header from '@/components/Header';
 
 interface ITravel {
     location_id: string;
@@ -15,6 +16,7 @@ interface ITravel {
 interface OutdoorProps {
     locations: ITravel[];
 }
+
 
 export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (context) => {
     const { prop1 } = context.query;
@@ -41,7 +43,8 @@ export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (conte
     }
 };
 
-const Outdoor: React.FC<OutdoorProps> = ({ locations }) => {
+
+const Outdoor = ({ locations }: OutdoorProps) => {
 
     const [locationName, setLocationName] = useState("");
 
@@ -50,10 +53,10 @@ const Outdoor: React.FC<OutdoorProps> = ({ locations }) => {
     };
 
     return (
-        <main>
-
-            <div>
-                <h1>Outdoor Activities</h1>
+        <main className={"cardPage"}>
+            <Header />
+            <div className={"cardContainer"}>
+                {/* <h1>Outdoor Activities</h1> */}
                 <Card locations={locations} />
             </div>
             {locationName && <p>Location: {locationName}</p>}

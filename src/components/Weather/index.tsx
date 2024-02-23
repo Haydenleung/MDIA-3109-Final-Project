@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { WeatherCondition, WeatherData } from "../../../typings";
 import styles from "./Weather.module.css";
+import Image from "next/image";
+import temp from "../../../public/images/temp.svg"
+import up from "../../../public/images/up.svg"
+import down from "../../../public/images/down.svg"
 
 const weatherIcon = {
   Clear: "clear.svg",
@@ -11,13 +15,12 @@ const weatherIcon = {
   Thunderstorm: "thunderstorm.svg",
 };
 
-export default function Weather() {
+export default function Weather({ location }: { location: any }) {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   useEffect(() => {
     const apiKey = "0add98044a12afcd463bc2e26aa52e22";
-    const city = "Vancouver";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
 
     async function fetchWeather() {
       try {
@@ -31,18 +34,18 @@ export default function Weather() {
     fetchWeather();
   }, []);
 
-const getWeatherIcon = (weather: WeatherCondition) => {
-  const defaultIcon = "default.svg";
-  return weatherIcon[weather]
-    ? `/images/${weatherIcon[weather]}`
-    : `/images/${defaultIcon}`;
-};
+  const getWeatherIcon = (weather: WeatherCondition) => {
+    const defaultIcon = "default.svg";
+    return weatherIcon[weather]
+      ? `/images/${weatherIcon[weather]}`
+      : `/images/${defaultIcon}`;
+  };
 
   return (
     <main>
       {weatherData ? (
         <div className={styles.weather_data_container}>
-          <div className={styles.weather_icon}>
+          {/* <div className={styles.weather_icon}>
             <img
               // Default OpenWeather Icons are commented out
               //src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
@@ -50,9 +53,37 @@ const getWeatherIcon = (weather: WeatherCondition) => {
               alt={weatherData.weather[0].description}
               width={180}
             />
+          </div> */}
+
+          <div className={styles.weatherContainer}>
+            <div>It is</div>
+            <span className={styles.bigWeather}>
+              {weatherData.weather[0].description
+                .split(" ")
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ")}
+            </span>
+            <div>in <span className={styles.location}>{location}</span></div>
+          </div>
+          <div className={styles.tempContainer}>
+            <div className={styles.bigTemp}>{(weatherData.main.temp - 273.15).toFixed(0)}°C</div>
+            <div className={styles.subInfo}>
+              <div className={styles.subText}>
+                <Image src={temp} className={styles.iconS} width={15} height={15} alt="searchIcon" />
+                Feels Like: {(weatherData.main.feels_like - 273.15).toFixed(0)}°C
+              </div>
+              <div className={styles.subTemp}>
+                <div className={styles.subText}>
+                  <Image src={up} className={styles.iconS} width={15} height={15} alt="searchIcon" />
+                  {(weatherData.main.temp_max - 273.15).toFixed(0)}°C</div>
+                <div className={styles.subText}>
+                  <Image src={down} className={styles.iconS} width={15} height={15} alt="searchIcon" />
+                  {(weatherData.main.temp_min - 273.15).toFixed(0)}°C</div>
+              </div>
+            </div>
           </div>
 
-          <div className={styles.temp_data}>
+          {/* <div className={styles.temp_data}>
             <p className={styles.temp_data_current}>
               {(weatherData.main.temp - 273.15).toFixed(2)}°C
             </p>
@@ -60,7 +91,6 @@ const getWeatherIcon = (weather: WeatherCondition) => {
               Feels Like: {(weatherData.main.feels_like - 273.15).toFixed(2)}°C
             </p>
           </div>
-
           <div className={styles.weather_type_data}>
             <p>
               {weatherData.weather[0].description
@@ -87,7 +117,7 @@ const getWeatherIcon = (weather: WeatherCondition) => {
                 minute: "2-digit",
               })}
             </p>
-          </div>
+          </div> */}
         </div>
       ) : (
         <p>No weather data to show right now :(</p>

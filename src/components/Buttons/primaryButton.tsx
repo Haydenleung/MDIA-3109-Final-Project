@@ -1,20 +1,12 @@
 import Image from "next/image";
+import styles from "./button.module.css"
 
-export default function PrimaryButton({title}) {
-    return (
-      <>
-        <div className="primary-button">
-          
-          {/* Dynamic Icon  */}
-          {/* <Image
-              src={}
-              width={}
-              height={}
-              alt={}
-          /> */}
-
-          {/* Dynamic content  */}
-         {title}
+export default function PrimaryButton({ title }: { title: string }) {
+  return (
+    <>
+      <div className={styles.primary_button}>
+        {/* Dynamic content  */}
+        {title}
       </div>
     </>
   );

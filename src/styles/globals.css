@@ -1,121 +1,184 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --white: 250, 250, 250;
-  --primary-blue: 38, 168, 171;
-  --dark-grey: 84, 84, 84;
-  --light-grey: 182, 182, 182;
-  --primary-red: 219, 127, 115;
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+h1 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 40px;
+  margin: 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--white));
+  margin: 0rem;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+header {
+  display: flex;
+  align-self: center;
+  justify-content: center;
 }
 
-.logo {
-  font-size: 18px;
-  color: rgb(var(--primary-blue));
+.page {
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
 }
+
+.button {
+  display: none;
+}
+
+.search {
+  min-width: 45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+  justify-content: center;
+  align-content: center;
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--Light-Grey---Supplementary, #B6B6B6);
+  padding-left: 2.8rem;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.searchInput::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.icon {
+  position: absolute;
+  margin: 1rem;
+}
+
+.landing {
+  width: 100%;
+  background-color: #FAFAFA;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  flex-grow: 1;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 35rem;
+}
+
+.landingHeading {
+  color: #000;
+  font-size: 40px;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.landingBody {
+  color: #000;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.vector-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.vector {
+  height: 75%;
+  width: auto;
+}
+
+/* Weather Page */
 
 .weather-homepage {
-  font-size: 32px;
-}
-
-.head-activities {
-  font-size: 32px;
-  text-align: center;
-}
-
-.head-activity {
-  font-size: 32px;
-}
-
-.info-activity {
+  width: 100%;
+  background-color: #FAFAFA;
+  border-radius: 16px;
+  flex-grow: 1;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
 }
 
-.header {
-  text-align: center;
-  padding-bottom: 3em;
-}
-
-.h2-activity {
-  font-size: 24px;
-  margin-top: 16px;
-  margin-bottom: 8px;
-}
-
-.question-homepage {
-  color: rgb(var(--dark-grey));
-}
-
-.primary-button {
-  background-color: rgb(var(--primary-red));
-  padding: 14px;
-  border-radius: 4px;
-  color: rgb(var(--white));
-  font-size: 18px;
-}
-
-.secondary-button {
-  color: rgb(var(--primary-red));
-  padding: 12px;
-  border-radius: 4px;
-  border-color: rgb(var(--primary-red));
-  border-width: 1px;
-  font-size: 14px;
-  text-align: center;
-  margin-top: 16px;
-  margin-bottom: 24px;
-}
-
-.tertiary-button {
-  color: rgb(var(--dark-grey));
-  font-size: 12px;
+.weather-main {
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .question-container {
   display: flex;
   flex-direction: column;
-  row-gap: 16px;
+  gap: 1rem;
 }
 
-.current-weather-text {
-  font-size: 12px;
-  text-align: center;
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-hr {
-  margin: 16px 0px 16px 0px;
+.question-heading {
+  color: #545454;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
 }
 
-.activities-card {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(var(--light-grey));
-  border-radius: 8px;
-  margin-top: 16px;
+.iconL {
+  position: absolute;
+  margin: 1rem;
 }
 
-.bottom-card {
-  padding: 16px;
+/* Activities */
+
+.cardPage {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  padding: 0rem 5rem;
 }

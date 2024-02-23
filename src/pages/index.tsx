@@ -1,57 +1,57 @@
 import React from "react";
 import Header from "../components/Header";
-import PrimaryButton from "@/components/Buttons/primaryButton";
 import Link from "next/link";
 import { useState } from "react";
-import Weather from "@/components/Weather";
+import Image from "next/image";
+import vector from "../../public/images/vector_1.svg"
+import search from "../../public/images/search.svg"
+import { useRouter } from 'next/router'
+
 
 export default function Home() {
-  const [temp, setTemp] = useState<string>("");
+
+  const router = useRouter()
+
+  const [location, setLocation] = useState<string>("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTemp(event.target.value);
+    setLocation(event.target.value);
   };
 
   const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setTemp("");
+    setLocation("");
+    router.push({
+      pathname: "/main",
+      query: { location: location },
+    })
   };
 
   return (
-    <main className={`flex min-h-screen flex-col p-8`}>
+    <main className={"page"}>
       <Header />
-
-      <div>
-        <h2 className="weather-homepage">
-          In Vancouver, BC it's currently:
-          <div>
-            <Weather />
-          </div>
-          
-        </h2>
-      </div>
-
-      <div className="question-container">
-        <h3 className="question-homepage">What are you planning for today?</h3>
-
+      <section className={"search"}>
+        <h1>WHERE DO YOU WANT TO GO? </h1>
         <form onSubmit={onFormSubmit} className={"searchForm"}>
+          <Image src={search} className="icon" width={18} height={18} alt="searchIcon" />
           <input
             type="text"
             onChange={handleChange}
-            value={temp}
-            className={"search"}
-            placeholder={"City, country, or any location..."}
+            value={location}
+            className={"searchInput"}
+            placeholder={"Search for destination"}
           />
           <button type="submit" className={"button"} />
         </form>
-
-        <Link href={`/indoor?prop1=${temp}`}>
-          <PrimaryButton title="Indoor Activities" />
-        </Link>
-
-        <Link href={`/outdoor?prop1=${temp}`}>
-          <PrimaryButton title="Outdoor Activities" />
-        </Link>
+      </section>
+      <div className={"landing"}>
+        <div className={"text"}>
+          <p className={"landingHeading"}>BE PREPARED FOR YOUR NEXT ADVENTURE</p>
+          <p className={"landingBody"}>Let us know where you want to go and leave the rest to us. We've got you covered!</p>
+        </div>
+        <div className={"vector-container"}>
+          <Image className={"vector"} src={vector} width={500} height={500} alt="welcome" />
+        </div>
       </div>
     </main>
   );
