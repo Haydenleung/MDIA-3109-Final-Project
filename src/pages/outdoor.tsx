@@ -17,8 +17,8 @@ interface OutdoorProps {
 }
 
 export const getServerSideProps: GetServerSideProps<OutdoorProps> = async () => {
-    // Fetch data from API
-    const tripAdvisorUrl = `https://api.content.tripadvisor.com/api/v1/location/search?key=6DC8221F0F674C3EBA67FEF064069B35&searchQuery=montreal&category=attractions&language=en`;
+
+    const tripAdvisorUrl = `https://api.content.tripadvisor.com/api/v1/location/search?key=6DC8221F0F674C3EBA67FEF064069B35&searchQuery=vancouver&category=attractions&language=en`;
 
     try {
         const response = await axios.get(tripAdvisorUrl);
@@ -28,14 +28,14 @@ export const getServerSideProps: GetServerSideProps<OutdoorProps> = async () => 
         const data = response.data.data;
         return {
             props: {
-                locations: data || [], // Ensure locations is initialized as an empty array if data is undefined
+                locations: data || [], 
             },
         };
     } catch (error) {
         console.error('Fetch Error:', error);
         return {
             props: {
-                locations: [], // Handle error case gracefully
+                locations: [], 
             },
         };
     }
