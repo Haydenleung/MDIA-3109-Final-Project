@@ -11,7 +11,6 @@ export default function Indoors() {
     return (
         <div>
             <h1>Indoor Activities</h1>
-            <Card onLocationNameChange={handleLocationNameChange} />
             {locationName && <p>Location: {locationName}</p>}
         </div>
     );

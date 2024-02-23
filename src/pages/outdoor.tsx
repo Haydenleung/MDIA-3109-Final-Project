@@ -1,7 +1,48 @@
-import React, { useState } from 'react';
+
+import { useState } from 'react';
+import { GetServerSideProps } from 'next';
+import axios from 'axios';
 import Card from '@/components/Card/card';
 
-export default function Outdoors() {
+interface ITravel {
+    location_id: string;
+    name: string;
+    address_obj: {
+        address_string: string;
+    };
+}
+
+interface OutdoorProps {
+    locations: ITravel[];
+}
+
+export const getServerSideProps: GetServerSideProps<OutdoorProps> = async () => {
+    // Fetch data from API
+    const tripAdvisorUrl = `https://api.content.tripadvisor.com/api/v1/location/search?key=6DC8221F0F674C3EBA67FEF064069B35&searchQuery=montreal&category=attractions&language=en`;
+
+    try {
+        const response = await axios.get(tripAdvisorUrl);
+        if (response.status !== 200) {
+            throw new Error('Failed to fetch data from TripAdvisor API');
+        }
+        const data = response.data.data;
+        return {
+            props: {
+                locations: data || [], // Ensure locations is initialized as an empty array if data is undefined
+            },
+        };
+    } catch (error) {
+        console.error('Fetch Error:', error);
+        return {
+            props: {
+                locations: [], // Handle error case gracefully
+            },
+        };
+    }
+};
+
+const Outdoor: React.FC<OutdoorProps> = ({ locations }) => {
+
     const [locationName, setLocationName] = useState("");
 
     const handleLocationNameChange = (name: string) => {
@@ -10,11 +51,15 @@ export default function Outdoors() {
 
     return (
         <main>
+
             <div>
                 <h1>Outdoor Activities</h1>
-                <Card onLocationNameChange={handleLocationNameChange} />
-                {locationName && <p>Location: {locationName}</p>}
+                <Card locations={locations} />
             </div>
+            {locationName && <p>Location: {locationName}</p>}
         </main>
+
     );
-}
+};
+
+export default Outdoor;

@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 interface ITravel {
     location_id: string;
     name: string;
@@ -8,30 +6,11 @@ interface ITravel {
     };
 }
 
-const apiKey = "6DC8221F0F674C3EBA67FEF064069B35";
-const tripAdvisorUrl = `https://api.content.tripadvisor.com/api/v1/location/search?searchQuery=vancouver&category=attractions&language=en&key=${apiKey}`;
+interface CardProps {
+    locations: ITravel[];
+}
 
-export default function Card() {
-    const [locations, setLocations] = useState<ITravel[]>([]);
-
-    useEffect(() => {
-        const fetchLocations = async () => {
-            try {
-                const response = await fetch(tripAdvisorUrl);
-                if (response.ok) {
-                    const data = await response.json();
-                    setLocations(data.data);
-                } else {
-                    console.error('ERROR');
-                }
-            } catch (error) {
-                console.error('Error');
-            }
-        };
-
-        fetchLocations();
-    }, []);
-
+const Card: React.FC<CardProps> = ({ locations }) => {
     return (
         <div>
             {locations.map(location => (
@@ -43,4 +22,6 @@ export default function Card() {
             ))}
         </div>
     );
-}
+};
+
+export default Card;
