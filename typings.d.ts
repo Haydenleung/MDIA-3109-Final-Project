@@ -40,3 +40,24 @@ export interface WeatherData {
   sys: WeatherSys;
 
 }
+
+
+interface ITravel {
+  location_id: string;
+  name: string;
+  address_obj: {
+    address_string: string;
+  };
+}
+
+interface CardProps {
+  locations: ITravel[];
+}
+
+interface IndoorProps {
+  locations: ITravel[];
+}
+
+interface OutdoorProps {
+  locations: ITravel[];
+}

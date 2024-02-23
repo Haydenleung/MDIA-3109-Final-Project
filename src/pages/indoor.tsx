@@ -4,18 +4,9 @@ import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import Card from '@/components/Card/card';
 import Header from '@/components/Header';
+import { ITravel, IndoorProps } from "../../typings";
 
-interface ITravel {
-    location_id: string;
-    name: string;
-    address_obj: {
-        address_string: string;
-    };
-}
 
-interface IndoorProps {
-    locations: ITravel[];
-}
 
 const apiKey = process.env.NEXT_PUBLIC_API_TRIP
 

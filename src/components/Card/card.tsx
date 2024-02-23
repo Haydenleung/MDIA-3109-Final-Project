@@ -1,18 +1,7 @@
 import styles from "./Card.module.css"
 import Image from "next/image";
 import temp_image from "../../../public/images/attraction.png"
-
-interface ITravel {
-    location_id: string;
-    name: string;
-    address_obj: {
-        address_string: string;
-    };
-}
-
-interface CardProps {
-    locations: ITravel[];
-}
+import { ITravel, CardProps } from "../../../typings";
 
 const Card = ({ locations }: CardProps) => {
     return (
