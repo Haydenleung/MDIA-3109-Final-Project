@@ -31,7 +31,13 @@ export default function Main() {
             <Header />
             <div className={"weather-homepage"}>
                 <div className={"vector-container"}>
-                    <Image className={"vector"} src={vector} width={500} height={500} alt="welcome" />
+                    <Image 
+                        className={"vector"} 
+                        src={vector} 
+                        width={500} 
+                        height={500} 
+                        alt="welcome" 
+                    />
                 </div>
                 <div className={"weather-main"}>
                     <Weather location={location} />
