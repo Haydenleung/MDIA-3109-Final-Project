@@ -50,12 +50,46 @@ interface ITravel {
   };
 }
 
+interface IImage {
+  images: {
+    original: {
+      url: string;
+    }
+  };
+}
+
+interface IDetail {
+  rating: number;
+  rating_image_url: string;
+  num_reviews: number;
+  description: string;
+}
+
+interface IReview {
+  rating: number;
+  published_date: string;
+  rating_image_url: string;
+  user: {
+    username: string;
+    avatar: {
+      original: string;
+    }
+  }
+  text: string;
+}
+
 interface CardProps {
   locations: ITravel[];
+  locaImage: IImage[][];
+  locaDetail: IDetail[];
+  locaReview: IReview[][];
 }
 
 interface IndoorProps {
   locations: ITravel[];
+  locaImage: IImage[][];
+  locaDetail: IDetail[];
+  locaReview: IReview[][];
 }
 
 interface OutdoorProps {
