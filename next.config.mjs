@@ -2,7 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['media-cdn.tripadvisor.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media-cdn.tripadvisor.com',
+        pathname: '**',
+      }
+    ]
   }
 };
 

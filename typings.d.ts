@@ -94,4 +94,7 @@ interface IndoorProps {
 
 interface OutdoorProps {
   locations: ITravel[];
+  locaImage: IImage[][];
+  locaDetail: IDetail[];
+  locaReview: IReview[][];
 }
