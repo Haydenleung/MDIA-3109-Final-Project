@@ -46,8 +46,7 @@ export default function Home() {
           <button type="submit" className={"button"} />
         </form>
 
-        <CurrentWeather/>
-        <FiveDayWeather/> 
+
         
       </section>
       <div className={"landing"}>
@@ -59,6 +58,9 @@ export default function Home() {
           <Image className={"vector"} src={vector} width={500} height={500} alt="welcome" />
         </div>
       </div>
+
+      <CurrentWeather/>
+        <FiveDayWeather/> 
     </main>
   );
 }

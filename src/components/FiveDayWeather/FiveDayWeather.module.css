@@ -7,6 +7,7 @@
   border: 2px solid pink;
   padding: 20px;
   border-radius: 10px; 
+  margin-bottom: 200px;
 }
 
 .daily_forecast {
@@ -20,6 +21,9 @@
 }
 
 .forecast_header {
+  border: 2px solid pink;
+  padding: 20px;
+  border-radius: 10px; 
   text-align: center; 
   font-size: 2em; 
   width: 100%; 
