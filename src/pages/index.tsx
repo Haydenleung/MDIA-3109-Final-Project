@@ -6,6 +6,8 @@ import Image from "next/image";
 import vector from "../../public/images/vector_1.svg"
 import search from "../../public/images/search.svg"
 import { useRouter } from 'next/router'
+import CurrentWeather from "@/components/CurrentWeather";
+import FiveDayWeather from "@/components/FiveDayWeather";
 
 
 export default function Home() {
@@ -43,6 +45,10 @@ export default function Home() {
           />
           <button type="submit" className={"button"} />
         </form>
+
+        <CurrentWeather/>
+        <FiveDayWeather/> 
+        
       </section>
       <div className={"landing"}>
         <div className={"text"}>

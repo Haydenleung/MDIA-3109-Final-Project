@@ -16,6 +16,7 @@ Giovana Birck, Hayden Leung, Kaitlyn Cameron, Sara Shiojima
 
 ## Installations 
 - npm install axios
+- npm install react-icons
 
 
 ### Cypress

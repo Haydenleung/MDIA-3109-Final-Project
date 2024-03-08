@@ -1,0 +1,24 @@
+.current_weather_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid pink;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.current_weather_container > div {
+    margin-top: 10px; 
+}
+
+.current_weather_container > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+}
+
+.current_temp{
+    font-size: 2rem;
+}

@@ -3,6 +3,9 @@ import Header from '../components/Header'
 import TertiaryButton from "@/components/Buttons/tertiaryButton";
 import Card from "@/components/Card/card";
 
+import CurrentWeather from "@/components/CurrentWeather";
+import FiveDayWeather from "@/components/FiveDayWeather";
+
 export default function Home() {
   return (
     <main className={`flex min-h-screen flex-col p-8`}>
@@ -18,9 +21,11 @@ export default function Home() {
         <div>
           {/* dynamic illustration  */}
           {/* dynamic weather information  */}
+
         </div>
         <div>
           {/* dynamic weather prediction for 5 days  */}
+   
         </div>
       </div>
 
