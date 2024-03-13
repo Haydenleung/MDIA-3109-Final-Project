@@ -41,13 +41,13 @@ export default function Home() {
             onChange={handleChange}
             value={location}
             className={"searchInput"}
-            placeholder={"Search for destination"}
+            placeholder={"Search for City in Metro Vancouver"}
           />
           <button type="submit" className={"button"} />
         </form>
 
 
-        
+
       </section>
       <div className={"landing"}>
         <div className={"text"}>
@@ -59,8 +59,8 @@ export default function Home() {
         </div>
       </div>
 
-      <CurrentWeather/>
-        <FiveDayWeather/> 
+      <CurrentWeather />
+      <FiveDayWeather />
     </main>
   );
 }

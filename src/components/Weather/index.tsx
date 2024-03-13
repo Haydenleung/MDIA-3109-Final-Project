@@ -6,6 +6,8 @@ import Image from "next/image";
 import temp from "../../../public/images/temp.svg"
 import up from "../../../public/images/up.svg"
 import down from "../../../public/images/down.svg"
+import { WeatherProps } from "../../../typings";
+import Link from "next/link";
 
 const weatherIcon = {
   Clear: "clear.svg",
@@ -15,20 +17,22 @@ const weatherIcon = {
   Thunderstorm: "thunderstorm.svg",
 };
 const apiKey = process.env.NEXT_PUBLIC_API_WEATHER
-export default function Weather({ location }: { location: any }) {
+export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   useEffect(() => {
-    
-   
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
+
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location},ca&appid=${apiKey}`;
 
     async function fetchWeather() {
       try {
         const response = await axios.get(url);
         setWeatherData(response.data);
+        getWeather(true);
       } catch (error) {
         console.error("Error:", error);
+        getWeather(false);
       }
     }
 
@@ -55,7 +59,6 @@ export default function Weather({ location }: { location: any }) {
               width={180}
             />
           </div> */}
-
           <div className={styles.weatherContainer}>
             <div>It is</div>
             <span className={styles.bigWeather}>
@@ -121,8 +124,16 @@ export default function Weather({ location }: { location: any }) {
           </div> */}
         </div>
       ) : (
-        <p>No weather data to show right now :(</p>
+        <>
+          <p className={styles.errormsg}>No weather data to show right now :(</p>
+          <p className={styles.suberrormsg}>Try to search a city in Metro Vancouver</p>
+          <Link href="/">
+            <button className={styles.returnbtn}>Search Again</button>
+          </Link>
+        </>
       )}
     </main>
   );
 }
+
+export default Weather;

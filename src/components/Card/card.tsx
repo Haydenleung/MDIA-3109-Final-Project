@@ -5,15 +5,14 @@ import { ITravel, CardProps } from "../../../typings";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-const Card = ({ locations, locaImage, locaDetail, locaReview }: CardProps) => {
+const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow }: CardProps) => {
 
-    const [show, setShow] = useState<boolean>(false);
     const [cardNumber, setCardNumber] = useState<number>(0);
 
     const router = useRouter()
 
     const handleClick = (i: number) => {
-        setShow(true);
+        handleShow(true);
         setCardNumber(i);
     };
 
@@ -33,7 +32,7 @@ const Card = ({ locations, locaImage, locaDetail, locaReview }: CardProps) => {
                 </div>
             ))}
         </div> :
-            <div onClick={() => setShow(false)}>
+            <div>
                 <div>
                     {locaImage[cardNumber].map((image, i) => (
                         image && image.images && image.images.original && (

@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import PrimaryButton from "@/components/Buttons/primaryButton";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Weather from "@/components/Weather";
 import { useRouter } from 'next/router'
 import Image from "next/image";
@@ -26,22 +26,32 @@ export default function Main() {
         setTemp("");
     };
 
+    const [apiDone, getApiDone] = useState<boolean>(false);
+
+    const handleFromWeather = (data: boolean) => {
+        getApiDone(data);
+    };
+
+    useEffect(() => {
+        console.log(apiDone);
+    }, [apiDone]);
+
     return (
         <main className={"page"}>
             <Header />
             <div className={"weather-homepage"}>
                 <div className={"vector-container"}>
-                    <Image 
-                        className={"vector"} 
-                        src={vector} 
-                        width={500} 
-                        height={500} 
-                        alt="welcome" 
+                    <Image
+                        className={"vector"}
+                        src={vector}
+                        width={500}
+                        height={500}
+                        alt="welcome"
                     />
                 </div>
                 <div className={"weather-main"}>
-                    <Weather location={location} />
-                    <div className="question-container">
+                    <Weather location={location} getWeather={handleFromWeather} />
+                    {apiDone ? <div className="question-container">
                         <h3 className="question-heading">Are you looking for:</h3>
                         <Link href={`/outdoor?prop1=${location}`} className={"link"}>
                             <Image src={outdoor} className="iconL" width={18} height={18} alt="searchIcon" />
@@ -51,9 +61,8 @@ export default function Main() {
                             <Image src={indoor} className="iconL" width={18} height={18} alt="searchIcon" />
                             <PrimaryButton title="Indoor Activities" />
                         </Link>
-                    </div>
+                    </div> : ""}
                 </div>
-
             </div>
         </main>
     );

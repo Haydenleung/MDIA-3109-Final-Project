@@ -60,6 +60,29 @@
   align-items: center;
 }
 
+.errormsg {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 110%;
+  margin: 0;
+}
+
+.suberrormsg {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #545454;
+  margin-bottom: 4rem;
+}
+
+.returnbtn {
+  background-color: transparent;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem 4rem;
+  cursor: pointer;
+}
+
 /* .weather_icon {
   display: flex;
   justify-content: center;
