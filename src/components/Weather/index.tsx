@@ -8,6 +8,7 @@ import up from "../../../public/images/up.svg"
 import down from "../../../public/images/down.svg"
 import { WeatherProps } from "../../../typings";
 import Link from "next/link";
+import PrimaryButton from "@/components/Buttons/primaryButton";
 
 const weatherIcon = {
   Clear: "clear.svg",
@@ -16,7 +17,9 @@ const weatherIcon = {
   Snow: "snow.svg",
   Thunderstorm: "thunderstorm.svg",
 };
+
 const apiKey = process.env.NEXT_PUBLIC_API_WEATHER
+
 export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
@@ -46,20 +49,12 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
 
   return (
     <main>
+      
       {weatherData ? (
         <div className={styles.weather_data_container}>
-          {/* <div className={styles.weather_icon}>
-            <img
-              // Default OpenWeather Icons are commented out
-              //src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
-              src={getWeatherIcon(weatherData.weather[0].main)}
-              alt={weatherData.weather[0].description}
-              width={180}
-            />
-          </div> */}
-          <div className={styles.vectorContainer}>
+
+          <div className={styles.vectorContainerDesktop}>
             <Image
-              // className={"vector"}
               src={`/illustrations/${weatherData.weather[0].icon}.png`}
               width={400}
               height={400}
@@ -68,6 +63,7 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
           </div>
 
           <div className={styles.weatherOuterContainer}>
+
             <div className={styles.weatherContainer}>
               <div>It is</div>
               <span className={styles.bigWeather}>
@@ -78,6 +74,15 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
               </span>
               <div>in <span className={styles.location}>{location}</span></div>
             </div>
+
+            <div className={styles.vectorContainerTabletPhone}>
+              <Image
+                src={`/illustrations/${weatherData.weather[0].icon}.png`}
+                width={400}
+                height={400}
+                alt="welcome"
+              />
+             </div>
 
             <div className={styles.tempContainer}>
               <div className={styles.bigTemp}>{(weatherData.main.temp - 273.15).toFixed(0)}°C</div>
@@ -114,6 +119,8 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
                 </div>
               </div>
             </div>
+
+
           </div>
 
 

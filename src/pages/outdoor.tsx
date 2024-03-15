@@ -120,6 +120,17 @@ const Outdoor = ({ locations, locaImage, locaDetail, locaReview }: OutdoorProps)
                 />
             </div>
             {locationName && <p>Location: {locationName}</p>}
+
+            <div className='tripadvisor-disclamer'>
+                <p>Attractions collected from the TripAdvisor API</p>
+                <Image 
+                    src={"/images/tripadvisor-logo.png"} 
+                    // className={"backimg"} 
+                    width={120} 
+                    height={24} 
+                    alt="back"
+                />
+            </div>
         </main>
     );
 };

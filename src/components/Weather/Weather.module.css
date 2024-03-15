@@ -1,3 +1,4 @@
+
 .weather_data_container {
   display: flex;
   align-items: flex-start;
@@ -34,6 +35,10 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
+}
+
+.vectorContainerTabletPhone {
+  display: none;
 }
 
 .bigTemp {
@@ -119,12 +124,25 @@
 /* IPhone XR */
 
 @media only screen and (device-width : 414px) and (device-height : 896px) {
+  
   .weather_data_container {
     gap: 4rem;
+    margin-left: 1em;
   }
   
   .weatherContainer {
     font-size: 80px;
+    width: 100%;
+  }
+
+  .vectorContainerTabletPhone {
+    display: flex;
+    margin-bottom: 3em;
+    padding-left: 3em;
+  }
+
+  .vectorContainerDesktop {
+    display: none;
   }
   
   .bigWeather {
@@ -173,6 +191,26 @@
 @media only screen and (min-device-width : 768px) and (max-device-width : 900px)  { 
   .weather_data_container {
     gap: 2rem;
+    flex-direction: column-reverse;
+    margin-left: 0em;
+    width: 100%;
+    padding-left: 5em;
+  }
+
+  .weatherContainer {
+    font-size: 60px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  .vectorContainerTabletPhone {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .vectorContainerDesktop {
+    display: none;
   }
   
   .bigWeather {

@@ -153,14 +153,13 @@ header {
   border: solid 1px #DB7F73;
   border-radius: 8px;
   color: #FFFF;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  padding-left: 8px;
 }
 
 .question-heading {
   color: #545454;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   margin: 0;
 }
@@ -201,6 +200,15 @@ header {
 .backimg {
   width: 100%;
   height: 100%;
+}
+
+.tripadvisor-disclamer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-size: 12px;
+  padding: 24px 0px;
 }
 
 
@@ -306,7 +314,7 @@ header {
     border: solid 1px #DB7F73;
     border-radius: 16px;
     color: #FFFF;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
     height: 100px;
     padding-left: 16px;
@@ -318,7 +326,7 @@ header {
   }
   
   .iconL {
-    height: 8%;
+    height: 5%;
     width: 10%;
   }
 
@@ -334,6 +342,13 @@ header {
     width: 4rem;
     left: 4rem;
     top: 4rem;
+  }
+
+  .tripadvisor-disclamer {
+    font-size: 24px;
+    width: 200%;
+    margin-top: 27em;
+    padding: 80px 0px;
   }
 }
 
@@ -398,7 +413,7 @@ header {
     border-radius: 8px;
     color: #FFFF;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     padding-left: 16px;
   }
   
@@ -431,6 +446,10 @@ header {
     margin-top: -5em;
     width: 90%;
     height: 90%;
+  }
+
+  .tripadvisor-disclamer {
+    font-size: 16px;
   }
   
 }
