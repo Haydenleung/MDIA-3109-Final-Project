@@ -14,6 +14,7 @@ const apiKey = process.env.NEXT_PUBLIC_API_TRIP
 export const getServerSideProps: GetServerSideProps<IndoorProps> = async (context) => {
     const { prop1 } = context.query;
     const tripAdvisorUrl = `https://api.content.tripadvisor.com/api/v1/location/search?key=${apiKey}&searchQuery=${prop1}%20British%20Columbia&category=restaurants&language=en`;
+    const city: string = prop1 ? String(prop1) : '';
 
     let retries = 3;
     while (retries > 0) {
@@ -64,6 +65,7 @@ export const getServerSideProps: GetServerSideProps<IndoorProps> = async (contex
                     locaImage: dataTwo || [],
                     locaDetail: dataThree || [],
                     locaReview: dataFour || [],
+                    city
                 },
             };
         } catch (error) {
@@ -79,12 +81,13 @@ export const getServerSideProps: GetServerSideProps<IndoorProps> = async (contex
             locaImage: [],
             locaDetail: [],
             locaReview: [],
+            city
         },
     };
 };
 
 
-const Indoor = ({ locations, locaImage, locaDetail, locaReview }: IndoorProps) => {
+const Indoor = ({ locations, locaImage, locaDetail, locaReview, city }: IndoorProps) => {
     const router = useRouter()
     const [locationName, setLocationName] = useState<string>("");
 
@@ -105,21 +108,22 @@ const Indoor = ({ locations, locaImage, locaDetail, locaReview }: IndoorProps) =
                 <Image src={"/images/back.svg"} className={"backimg"} width={100} height={100} alt="back"></Image>
             </button>
             <div className={"cardContainer"}>
-                <Card locations={locations} locaImage={locaImage} locaDetail={locaDetail} locaReview={locaReview} show={show} handleShow={handleShow} />
+                <Card
+                    locations={locations} locaImage={locaImage} locaDetail={locaDetail} locaReview={locaReview} show={show} handleShow={handleShow} city={city} />
             </div>
             {locationName && <p>Location: {locationName}</p>}
 
             <div className='tripadvisor-disclamer'>
                 <p>Attractions collected from the TripAdvisor API</p>
-                <Image 
-                    src={"/images/tripadvisor-logo.png"} 
+                <Image
+                    src={"/images/tripadvisor-logo.png"}
                     // className={"backimg"} 
-                    width={120} 
-                    height={24} 
+                    width={120}
+                    height={24}
                     alt="back"
                 />
             </div>
-            
+
         </main>
     );
 };

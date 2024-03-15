@@ -13,6 +13,8 @@ const apiKey = process.env.NEXT_PUBLIC_API_TRIP
 export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (context) => {
     const { prop1 } = context.query;
     const tripAdvisorUrl = `https://api.content.tripadvisor.com/api/v1/location/search?key=${apiKey}&searchQuery=${prop1}%20British%20Columbia&category=attractions&language=en`;
+    const city: string = prop1 ? String(prop1) : '';
+
 
     let retries = 3;
     while (retries > 0) {
@@ -62,7 +64,8 @@ export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (conte
                     locations: data || [],
                     locaImage: dataTwo || [],
                     locaDetail: dataThree || [],
-                    locaReview: dataFour || []
+                    locaReview: dataFour || [],
+                    city
                 },
             };
         } catch (error) {
@@ -77,12 +80,13 @@ export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (conte
             locaImage: [],
             locaDetail: [],
             locaReview: [],
+            city
         },
     };
 };
 
 
-const Outdoor = ({ locations, locaImage, locaDetail, locaReview }: OutdoorProps) => {
+const Outdoor = ({ locations, locaImage, locaDetail, locaReview, city }: OutdoorProps) => {
     const router = useRouter()
     const [locationName, setLocationName] = useState<string>("");
     const handleLocationNameChange = (name: string) => {
@@ -100,34 +104,35 @@ const Outdoor = ({ locations, locaImage, locaDetail, locaReview }: OutdoorProps)
             <Header />
 
             <button className={"back"} onClick={() => !show ? router.back() : setShow(!show)}>
-                <Image 
-                    src={"/images/back.svg"} 
-                    className={"backimg"} 
-                    width={100} 
-                    height={100} 
+                <Image
+                    src={"/images/back.svg"}
+                    className={"backimg"}
+                    width={100}
+                    height={100}
                     alt="back"
                 />
             </button>
 
             <div className={"cardContainer"}>
-                <Card 
-                    locations={locations} 
-                    locaImage={locaImage} 
-                    locaDetail={locaDetail} 
-                    locaReview={locaReview} 
-                    show={show} 
+                <Card
+                    locations={locations}
+                    locaImage={locaImage}
+                    locaDetail={locaDetail}
+                    locaReview={locaReview}
+                    show={show}
                     handleShow={handleShow}
+                    city={city}
                 />
             </div>
             {locationName && <p>Location: {locationName}</p>}
 
             <div className='tripadvisor-disclamer'>
                 <p>Attractions collected from the TripAdvisor API</p>
-                <Image 
-                    src={"/images/tripadvisor-logo.png"} 
+                <Image
+                    src={"/images/tripadvisor-logo.png"}
                     // className={"backimg"} 
-                    width={120} 
-                    height={24} 
+                    width={120}
+                    height={24}
                     alt="back"
                 />
             </div>

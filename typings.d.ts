@@ -85,6 +85,7 @@ interface CardProps {
   locaReview: IReview[][];
   show: boolean;
   handleShow: (trigger: boolean) => void;
+  city: string;
 }
 
 interface IndoorProps {
@@ -92,6 +93,7 @@ interface IndoorProps {
   locaImage: IImage[][];
   locaDetail: IDetail[];
   locaReview: IReview[][];
+  city: string;
 }
 
 interface OutdoorProps {
@@ -99,6 +101,7 @@ interface OutdoorProps {
   locaImage: IImage[][];
   locaDetail: IDetail[];
   locaReview: IReview[][];
+  city: string;
 }
 
 interface WeatherProps {

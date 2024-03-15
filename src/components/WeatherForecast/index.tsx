@@ -51,80 +51,80 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
 
   return (
     <main>
-      
+
       {weatherData ? (
         <div className={styles.weather_forecast_container}>
-            <div className={styles.weatherOuterContainer}>
-                <Image 
-                    src={`/icons/${weatherData.weather[0].icon}.png`}
-                    className={styles.iconS} 
-                    width={120} 
-                    height={120} 
-                    alt="searchIcon" 
-                />
+          <div className={styles.weatherOuterContainer}>
+            <Image
+              src={`/icons/${weatherData.weather[0].icon}.png`}
+              className={styles.iconS}
+              width={120}
+              height={120}
+              alt="searchIcon"
+            />
 
-                <div className={styles.tempContainer}>
-                    <div className={styles.bigTemp}>{(weatherData.main.temp - 273.15).toFixed(0)}°C</div>
-                    <div className={styles.subInfo}>
-                        <div className={styles.subText}>
-                            <Image 
-                                src={temp} 
-                                className={styles.iconS} 
-                                width={15} 
-                                height={15} 
-                                alt="searchIcon" 
-                            />
-                            Feels Like: {(weatherData.main.feels_like - 273.15).toFixed(0)}°C
-                        </div>
-                        <div className={styles.subTemp}>
-                            <div className={styles.subText}>
-                                <Image 
-                                    src={up} 
-                                    className={styles.iconS} 
-                                    width={15} 
-                                    height={15} 
-                                    alt="searchIcon" 
-                                />
-                                {(weatherData.main.temp_max - 273.15).toFixed(0)}°C
-                            </div>
-                            <div className={styles.subText}>
-                                <Image 
-                                    src={down} 
-                                    className={styles.iconS} 
-                                    width={15} 
-                                    height={15} 
-                                    alt="searchIcon" 
-                                />
-                                {(weatherData.main.temp_min - 273.15).toFixed(0)}°C
-                            </div>
-                        </div>
-                    </div>
+            <div className={styles.tempContainer}>
+              <div className={styles.bigTemp}>{(weatherData.main.temp - 273.15).toFixed(0)}°C</div>
+              <div className={styles.subInfo}>
+                <div className={styles.subText}>
+                  <Image
+                    src={temp}
+                    className={styles.iconS}
+                    width={15}
+                    height={15}
+                    alt="searchIcon"
+                  />
+                  Feels Like: {(weatherData.main.feels_like - 273.15).toFixed(0)}°C
                 </div>
-            </div>
-            <div>
-              <div className={styles.forecast_container}>
-
-                {weather.list
-                  .filter((x:any) => x.dt_txt.includes("00:00:00"))
-                  .map((x:any) => (
-
-                    <div key={x.dt} className={styles.daily_forecast}> 
-                      <p>{new Date(x.dt * 1000).toDateString().split(' ').slice(1, 3).join(' ')}</p>
-                      <div>
-                        <Image 
-                          src={`/icons/${weatherData.weather[0].icon}.png`}
-                          className={styles.mainIcon} 
-                          width={32} 
-                          height={32} 
-                          alt="searchIcon" 
-                        />
-                        <p>{x.main.temp} &deg;C</p>
-                      </div>
-                    </div>
-                  ))}
+                <div className={styles.subTemp}>
+                  <div className={styles.subText}>
+                    <Image
+                      src={up}
+                      className={styles.iconS}
+                      width={15}
+                      height={15}
+                      alt="searchIcon"
+                    />
+                    {(weatherData.main.temp_max - 273.15).toFixed(0)}°C
+                  </div>
+                  <div className={styles.subText}>
+                    <Image
+                      src={down}
+                      className={styles.iconS}
+                      width={15}
+                      height={15}
+                      alt="searchIcon"
+                    />
+                    {(weatherData.main.temp_min - 273.15).toFixed(0)}°C
+                  </div>
+                </div>
               </div>
-
             </div>
+          </div>
+          <div>
+            <div className={styles.forecast_container}>
+
+              {weather.list
+                .filter((x: any) => x.dt_txt.includes("00:00:00"))
+                .map((x: any) => (
+
+                  <div key={x.dt} className={styles.daily_forecast}>
+                    <p>{new Date(x.dt * 1000).toDateString().split(' ').slice(1, 3).join(' ')}</p>
+                    <div>
+                      <Image
+                        src={`/icons/${weatherData.weather[0].icon}.png`}
+                        className={styles.mainIcon}
+                        width={32}
+                        height={32}
+                        alt="searchIcon"
+                      />
+                      <p>{x.main.temp} &deg;C</p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+
+          </div>
         </div>
       ) : (
         <>
