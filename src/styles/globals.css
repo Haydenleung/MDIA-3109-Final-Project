@@ -121,7 +121,7 @@ header {
 
 .weather-homepage {
   width: 100%;
-  background-color: #FAFAFA;
+  background-color: #FFFF;
   border-radius: 16px;
   flex-grow: 1;
   display: flex;
@@ -146,12 +146,16 @@ header {
 
 .link {
   text-decoration: none;
-  color: black;
-  font-size: 18px;
-  font-weight: 600;
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: #DB7F73;
+  border: solid 1px #DB7F73;
+  border-radius: 8px;
+  color: #FFFF;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 8px;
 }
 
 .question-heading {
@@ -279,6 +283,7 @@ header {
   
   .weather-homepage {
     background-color: #FFFF;
+    display: flex;
     flex-direction: column;
     gap: 4rem;
   }
@@ -335,7 +340,7 @@ header {
 
 /* Tablet */
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+@media only screen and (min-device-width : 768px) and (max-device-width : 900px)  { 
 
   h1 {
     font-size: 40px;
@@ -377,6 +382,7 @@ header {
   
   .weather-homepage {
     background-color: #FFFF;
+    display: flex;
     flex-direction: column;
     gap: 4rem;
   }
@@ -428,3 +434,4 @@ header {
   }
   
 }
+

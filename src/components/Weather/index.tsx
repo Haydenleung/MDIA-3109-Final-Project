@@ -57,42 +57,65 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
               width={180}
             />
           </div> */}
-          <div className={"vector-container"}>
+          <div className={styles.vectorContainer}>
             <Image
               // className={"vector"}
               src={`/illustrations/${weatherData.weather[0].icon}.png`}
-              width={600}
-              height={600}
+              width={400}
+              height={400}
               alt="welcome"
             />
           </div>
-          <div className={styles.weatherContainer}>
-            <div>It is</div>
-            <span className={styles.bigWeather}>
-              {weatherData.weather[0].description
-                .split(" ")
-                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ")}
-            </span>
-            <div>in <span className={styles.location}>{location}</span></div>
-          </div>
-          <div className={styles.tempContainer}>
-            <div className={styles.bigTemp}>{(weatherData.main.temp - 273.15).toFixed(0)}°C</div>
-            <div className={styles.subInfo}>
-              <div className={styles.subText}>
-                <Image src={temp} className={styles.iconS} width={15} height={15} alt="searchIcon" />
-                Feels Like: {(weatherData.main.feels_like - 273.15).toFixed(0)}°C
-              </div>
-              <div className={styles.subTemp}>
+
+          <div className={styles.weatherOuterContainer}>
+            <div className={styles.weatherContainer}>
+              <div>It is</div>
+              <span className={styles.bigWeather}>
+                {weatherData.weather[0].description
+                  .split(" ")
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" ")}
+              </span>
+              <div>in <span className={styles.location}>{location}</span></div>
+            </div>
+
+            <div className={styles.tempContainer}>
+              <div className={styles.bigTemp}>{(weatherData.main.temp - 273.15).toFixed(0)}°C</div>
+              <div className={styles.subInfo}>
                 <div className={styles.subText}>
-                  <Image src={up} className={styles.iconS} width={15} height={15} alt="searchIcon" />
-                  {(weatherData.main.temp_max - 273.15).toFixed(0)}°C</div>
-                <div className={styles.subText}>
-                  <Image src={down} className={styles.iconS} width={15} height={15} alt="searchIcon" />
-                  {(weatherData.main.temp_min - 273.15).toFixed(0)}°C</div>
+                  <Image 
+                    src={temp} 
+                    className={styles.iconS} 
+                    width={15} 
+                    height={15} 
+                    alt="searchIcon" 
+                  />
+                  Feels Like: {(weatherData.main.feels_like - 273.15).toFixed(0)}°C
+                </div>
+                <div className={styles.subTemp}>
+                  <div className={styles.subText}>
+                    <Image 
+                      src={up} 
+                      className={styles.iconS} 
+                      width={15} 
+                      height={15} 
+                      alt="searchIcon" 
+                    />
+                    {(weatherData.main.temp_max - 273.15).toFixed(0)}°C</div>
+                  <div className={styles.subText}>
+                    <Image 
+                      src={down} 
+                      className={styles.iconS} 
+                      width={15} 
+                      height={15} 
+                      alt="searchIcon" 
+                    />
+                    {(weatherData.main.temp_min - 273.15).toFixed(0)}°C</div>
+                </div>
               </div>
             </div>
           </div>
+
 
           {/* <div className={styles.temp_data}>
             <p className={styles.temp_data_current}>

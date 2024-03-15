@@ -1,14 +1,21 @@
 .weather_data_container {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
   gap: 4rem;
+  margin-left: -15em;
+}
+
+.weatherOuterContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .weatherContainer {
   font-size: 60px;
   font-weight: 600;
+  width: 200%;
+  margin-bottom: 0.5em;
 }
 
 .bigWeather {
@@ -50,7 +57,7 @@
 }
 
 .subText {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: #545454;
   display: flex;
@@ -163,7 +170,7 @@
 
 /* Tablet */
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+@media only screen and (min-device-width : 768px) and (max-device-width : 900px)  { 
   .weather_data_container {
     gap: 2rem;
   }
