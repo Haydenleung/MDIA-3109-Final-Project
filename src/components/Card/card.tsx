@@ -18,10 +18,19 @@ const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow }
         setCardNumber(i);
     };
 
+    const [apiDone, getApiDone] = useState<boolean>(false);
+
+    const handleFromWeather = (data: boolean) => {
+        getApiDone(data);
+    };
+
     return (
         !show ? 
         <div className={styles.container}>
-            <WeatherForecast/>
+            <WeatherForecast 
+                location={location} 
+                getWeather={handleFromWeather} 
+            />
             {locations.slice(0, 5).map((location, i) => (
                 <div onClick={() => handleClick(i)} key={location.location_id} className={styles.location_card}>
                     <Image src={locaImage[i][0].images.original.url} width={1000} height={1000} alt="attraction" className={styles.image} />
