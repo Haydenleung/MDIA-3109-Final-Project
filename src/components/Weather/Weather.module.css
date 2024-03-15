@@ -160,3 +160,20 @@
   }
   
 }
+
+/* Tablet */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+  .weather_data_container {
+    gap: 2rem;
+  }
+  
+  .bigWeather {
+    border-radius: 8px;
+  }
+  
+  .subText {
+    font-size: 24px;
+  }
+
+}
