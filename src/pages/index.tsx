@@ -11,10 +11,8 @@ import FiveDayWeather from "@/components/FiveDayWeather";
 
 
 export default function Home() {
-
   const router = useRouter()
-
-  const [location, setLocation] = useState<string>("");
+  const [location, setLocation] = useState<string>("")
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLocation(event.target.value);
@@ -31,7 +29,9 @@ export default function Home() {
 
   return (
     <main className={"page"}>
+
       <Header />
+
       <section className={"search"}>
         <h1>WHERE DO YOU WANT TO GO? </h1>
         <form onSubmit={onFormSubmit} className={"searchForm"}>
@@ -45,10 +45,8 @@ export default function Home() {
           />
           <button type="submit" className={"button"} />
         </form>
-
-
-
       </section>
+      
       <div className={"landing"}>
         <div className={"text"}>
           <p className={"landingHeading"}>BE PREPARED FOR YOUR NEXT ADVENTURE</p>

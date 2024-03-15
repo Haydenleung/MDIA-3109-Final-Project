@@ -11,10 +11,8 @@ import outdoor from "../../public/images/outdoor.svg"
 import indoor from "../../public/images/indoor.svg"
 
 export default function Main() {
-
     const router = useRouter()
     const { location } = router.query
-
     const [temp, setTemp] = useState<string>("");
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,16 +38,6 @@ export default function Main() {
         <main className={"page"}>
             <Header />
             <div className={"weather-homepage"}>
-                <div className={"vector-container"}>
-                    {/* <Image
-                        className={"vector"}
-                        src={vector}
-                        // src={`illustrations/${weatherData.weather[0].icon}.svg`}
-                        width={500}
-                        height={500}
-                        alt="welcome"
-                    /> */}
-                </div>
                 <div className={"weather-main"}>
                     <Weather location={location} getWeather={handleFromWeather} />
                     {apiDone ? <div className="question-container">

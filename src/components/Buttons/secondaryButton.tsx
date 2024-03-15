@@ -5,14 +5,6 @@ export default function SecondaryButton() {
       <>
         <div className="secondary-button">
           <h3>Go to website</h3>
-
-          {/* New Window Icon*/}
-          {/* <Image
-              src={}
-              width={}
-              height={}
-              alt={}
-          /> */}
       </div>
     </>
   );

@@ -9,7 +9,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 
-
 const apiKey = process.env.NEXT_PUBLIC_API_TRIP
 
 export const getServerSideProps: GetServerSideProps<IndoorProps> = async (context) => {
@@ -86,15 +85,15 @@ export const getServerSideProps: GetServerSideProps<IndoorProps> = async (contex
 
 
 const Indoor = ({ locations, locaImage, locaDetail, locaReview }: IndoorProps) => {
-
     const router = useRouter()
-
     const [locationName, setLocationName] = useState<string>("");
+
     const handleLocationNameChange = (name: string) => {
         setLocationName(name);
     };
 
     const [show, setShow] = useState<boolean>(false);
+
     const handleShow = (trigger: boolean) => {
         setShow(trigger);
     };
@@ -106,12 +105,10 @@ const Indoor = ({ locations, locaImage, locaDetail, locaReview }: IndoorProps) =
                 <Image src={"/images/back.svg"} className={"backimg"} width={100} height={100} alt="back"></Image>
             </button>
             <div className={"cardContainer"}>
-                {/* <h1>Outdoor Activities</h1> */}
                 <Card locations={locations} locaImage={locaImage} locaDetail={locaDetail} locaReview={locaReview} show={show} handleShow={handleShow} />
             </div>
             {locationName && <p>Location: {locationName}</p>}
         </main>
-
     );
 };
 

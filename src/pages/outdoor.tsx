@@ -8,7 +8,6 @@ import { OutdoorProps } from "../../typings";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-
 const apiKey = process.env.NEXT_PUBLIC_API_TRIP
 
 export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (context) => {
@@ -84,15 +83,14 @@ export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (conte
 
 
 const Outdoor = ({ locations, locaImage, locaDetail, locaReview }: OutdoorProps) => {
-
     const router = useRouter()
-
     const [locationName, setLocationName] = useState<string>("");
     const handleLocationNameChange = (name: string) => {
         setLocationName(name);
     };
 
     const [show, setShow] = useState<boolean>(false);
+
     const handleShow = (trigger: boolean) => {
         setShow(trigger);
     };
@@ -100,16 +98,29 @@ const Outdoor = ({ locations, locaImage, locaDetail, locaReview }: OutdoorProps)
     return (
         <main className={"cardPage"}>
             <Header />
+
             <button className={"back"} onClick={() => !show ? router.back() : setShow(!show)}>
-                <Image src={"/images/back.svg"} className={"backimg"} width={100} height={100} alt="back"></Image>
+                <Image 
+                    src={"/images/back.svg"} 
+                    className={"backimg"} 
+                    width={100} 
+                    height={100} 
+                    alt="back"
+                />
             </button>
+
             <div className={"cardContainer"}>
-                {/* <h1>Outdoor Activities</h1> */}
-                <Card locations={locations} locaImage={locaImage} locaDetail={locaDetail} locaReview={locaReview} show={show} handleShow={handleShow} />
+                <Card 
+                    locations={locations} 
+                    locaImage={locaImage} 
+                    locaDetail={locaDetail} 
+                    locaReview={locaReview} 
+                    show={show} 
+                    handleShow={handleShow}
+                />
             </div>
             {locationName && <p>Location: {locationName}</p>}
         </main>
-
     );
 };
 

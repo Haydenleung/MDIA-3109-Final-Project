@@ -5,7 +5,6 @@ export default function PrimaryButton({ title }: { title: string }) {
   return (
     <>
       <div className={styles.primary_button}>
-        {/* Dynamic content  */}
         {title}
       </div>
     </>
