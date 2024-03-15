@@ -87,9 +87,45 @@
         border-radius: 8px 8px 0 0;
     }
     
+    .container-reviews {
+        width: 100%;
+        margin-left: -10em;
+    }
+}
+
+
+/* Tablet */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .image {
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .info {
+        padding: 1.5rem;
+    }
+    
+    .title {
+        font-size: 32px;
+    }
+    
+    .address {
+        font-size: 20px;
+    }
+    
+    .carousell {
+        border-radius: 8px 8px 0 0;
+    }
     
     .container-reviews {
         width: 100%;
         margin-left: -10em;
     }
+
 }
