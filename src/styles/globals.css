@@ -230,12 +230,11 @@ header {
   .searchInput {
     border-radius: 8px;
     font-size: 32px;
-    padding-left: 32px;
+    padding-left: 70px;
   }
   
   .searchInput::placeholder {
     font-size: 32px;
-    padding-left: 32px;
   }
 
   .icon {
