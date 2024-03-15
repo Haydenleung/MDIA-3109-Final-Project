@@ -5,6 +5,8 @@ import { ITravel, CardProps } from "../../../typings";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+import WeatherForecast from "../WeatherForecast";
+
 const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow }: CardProps) => {
 
     const [cardNumber, setCardNumber] = useState<number>(0);
@@ -19,6 +21,7 @@ const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow }
     return (
         !show ? 
         <div className={styles.container}>
+            <WeatherForecast/>
             {locations.slice(0, 5).map((location, i) => (
                 <div onClick={() => handleClick(i)} key={location.location_id} className={styles.location_card}>
                     <Image src={locaImage[i][0].images.original.url} width={1000} height={1000} alt="attraction" className={styles.image} />
