@@ -59,8 +59,8 @@ export default function Home() {
         </div>
       </div>
 
-      <CurrentWeather />
-      <FiveDayWeather />
+      {/* <CurrentWeather /> */}
+      {/* <FiveDayWeather /> */}
     </main>
   );
 }

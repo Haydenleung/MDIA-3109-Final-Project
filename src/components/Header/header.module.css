@@ -3,3 +3,12 @@
     width: auto;
     margin: 0.5rem;
 }
+
+/* IPhone XR */
+
+@media only screen and (device-width : 414px) and (device-height : 896px) {
+    .logo {
+        height: 6rem;
+        margin: 0.7rem;
+    }
+}

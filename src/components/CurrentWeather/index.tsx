@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import styles from "./CurrentWeather.module.css";
 
-import { BsArrowDown, BsArrowUp, BsSun, BsThermometer } from "react-icons/bs";
+// import { BsArrowDown, BsArrowUp, BsSun, BsThermometer } from "react-icons/bs";
 
 const apiKey = process.env.NEXT_PUBLIC_API_WEATHER
 
@@ -28,18 +28,18 @@ export default function CurrentWeather() {
 
   return (
     <div className={styles.current_weather_container}>
-      <BsSun size={200} />
+      {/* <BsSun size={200} /> */}
 
       <div className={styles.current_conditions_container}>
         <div className={styles.current_temp}>{weather.main.temp}°C</div>
 
         <div className={styles.feels_like}>
-          <BsThermometer size={20} /> Feels like {weather.main.feels_like}°C
+          {/* <BsThermometer size={20} /> Feels like {weather.main.feels_like}°C */}
         </div>
 
         <div className={styles.high_low_temp}>
-          <BsArrowUp size={20} /> {weather.main.temp_max}°C
-          <BsArrowDown size={20} /> {weather.main.temp_min}°C
+          {/* <BsArrowUp size={20} /> {weather.main.temp_max}°C */}
+          {/* <BsArrowDown size={20} /> {weather.main.temp_min}°C */}
         </div>
       </div>
     </div>
