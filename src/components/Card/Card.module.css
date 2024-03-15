@@ -63,7 +63,7 @@
     .container {
         width: 50%;
         grid-template-columns: 1fr;
-        margin-left: -16em;
+        margin-left: -11em;
         gap: 2rem;
     }
     

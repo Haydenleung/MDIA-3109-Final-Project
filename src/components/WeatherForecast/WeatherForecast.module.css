@@ -151,3 +151,40 @@
   width: 48px;
 }
 }
+
+/* IPhone XR */
+
+@media only screen and (device-width : 414px) and (device-height : 896px) {
+  .weather_forecast_container {
+    gap: 2rem;
+  }
+  
+  .weatherOuterContainer {
+    gap: 4em;
+    margin-left: 5em;
+  }
+  
+  .bigTemp {
+    font-size: 80px;
+  }
+  
+  .subText {
+    font-size: 24px;
+  }
+  
+  .forecast_container {
+    margin-left: 5em;
+    margin-bottom: 3em;
+  }
+  
+  .daily_forecast p {
+  
+    font-size: 18px;
+  }
+  
+  .mainIcon {
+    height: 48px;
+    width: 48px;
+  }
+
+}
