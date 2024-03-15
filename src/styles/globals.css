@@ -332,3 +332,128 @@ header {
     top: 4rem;
   }
 }
+
+
+/* Tablet */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  header {
+    margin-top: 24px;
+  }
+  
+  .searchInput {
+    font-size: 20px;
+  }
+  
+  .searchInput::placeholder {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+  
+  .icon {
+    position: absolute;
+    margin: 1.4em;
+    height: 24px;
+    width: 24px;
+  }
+  
+  .landing {
+    flex-direction: column;
+    gap: 0rem;
+    padding: 2em;  
+  }
+  
+  .vector {
+    height: 90%;
+  }
+  
+  
+  /* Weather Page */
+  
+  .weather-homepage {
+    width: 100%;
+    background-color: #FAFAFA;
+    border-radius: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+  }
+  
+  .weather-main {
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .question-heading {
+    color: #545454;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .iconL {
+    position: absolute;
+    margin: 1rem;
+  }
+  
+  /* Activities */
+  
+  .cardPage {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+  
+  .cardContainer {
+    display: flex;
+    width: 100%;
+    padding: 0rem 5rem;
+  }
+  
+  .back {
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    left: 6rem;
+    top: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .backimg {
+    width: 100%;
+    height: 100%;
+  }
+  
+}
