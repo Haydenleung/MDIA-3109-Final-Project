@@ -55,3 +55,36 @@
     border-radius: 6px 6px 0 0;
     border: none;
 }
+
+
+/* IPhone XR */
+
+@media only screen and (device-width : 414px) and (device-height : 896px) {
+    .container {
+        width: 50%;
+        grid-template-columns: 1fr;
+        margin-left: -16em;
+        gap: 2rem;
+    }
+    
+    .image {
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .info {
+        padding: 1.5rem;
+    }
+    
+    .title {
+        font-size: 32px;
+    }
+    
+    .address {
+        font-size: 20px;
+    }
+    
+    .carousell {
+        border-radius: 8px 8px 0 0;
+    }
+    
+}
