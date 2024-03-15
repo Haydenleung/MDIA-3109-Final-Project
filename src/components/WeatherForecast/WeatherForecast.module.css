@@ -115,3 +115,39 @@
   .mainIcon {
     margin-left: 1em;  
   }
+
+  /* Tablet */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 900px)  { 
+
+.weather_forecast_container {
+  gap: 2rem;
+}
+
+.weatherOuterContainer {
+  gap: 4em;
+  margin-left: 8em;
+}
+
+.bigTemp {
+  font-size: 80px;
+}
+
+.subText {
+  font-size: 24px;
+}
+
+.forecast_container {
+  margin-left: 8em;
+}
+
+.daily_forecast p {
+
+  font-size: 18px;
+}
+
+.mainIcon {
+  height: 48px;
+  width: 48px;
+}
+}
