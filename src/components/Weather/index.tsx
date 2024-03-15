@@ -21,8 +21,6 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   useEffect(() => {
-
-
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location},ca&appid=${apiKey}`;
 
     async function fetchWeather() {
@@ -59,6 +57,15 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
               width={180}
             />
           </div> */}
+          <div className={"vector-container"}>
+            <Image
+              // className={"vector"}
+              src={`/illustrations/${weatherData.weather[0].icon}.png`}
+              width={600}
+              height={600}
+              alt="welcome"
+            />
+          </div>
           <div className={styles.weatherContainer}>
             <div>It is</div>
             <span className={styles.bigWeather}>

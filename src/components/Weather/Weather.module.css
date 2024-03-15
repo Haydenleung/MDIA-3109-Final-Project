@@ -99,7 +99,6 @@
   text-align: center;
 }
 
-
 .temp_data_current {
   font-size: 6rem;
 }
@@ -107,3 +106,57 @@
 .temp_data_feelslike {
   font-size: 2rem;
 } */
+
+
+
+/* IPhone XR */
+
+@media only screen and (device-width : 414px) and (device-height : 896px) {
+  .weather_data_container {
+    gap: 4rem;
+  }
+  
+  .weatherContainer {
+    font-size: 80px;
+  }
+  
+  .bigWeather {
+    border-radius: 8px;
+  }
+  
+  .tempContainer {
+    gap: 5rem;
+  }
+  
+  .bigTemp {
+    font-size: 120px;
+  }
+  
+  .subInfo {
+    gap: 1rem;
+  }
+  
+  .subText {
+    font-size: 40px;
+    gap: 1rem;
+  }
+
+  .iconS {
+    height: 100%;
+  }
+  
+  .errormsg {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 110%;
+    margin: 0;
+  }
+  
+  .suberrormsg {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #545454;
+    margin-bottom: 4rem;
+  }
+  
+}

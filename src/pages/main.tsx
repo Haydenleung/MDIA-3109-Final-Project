@@ -41,13 +41,14 @@ export default function Main() {
             <Header />
             <div className={"weather-homepage"}>
                 <div className={"vector-container"}>
-                    <Image
+                    {/* <Image
                         className={"vector"}
                         src={vector}
+                        // src={`illustrations/${weatherData.weather[0].icon}.svg`}
                         width={500}
                         height={500}
                         alt="welcome"
-                    />
+                    /> */}
                 </div>
                 <div className={"weather-main"}>
                     <Weather location={location} getWeather={handleFromWeather} />
@@ -59,7 +60,7 @@ export default function Main() {
                         </Link>
                         <Link href={`/indoor?prop1=${location}`} className={"link"}>
                             <Image src={indoor} className="iconL" width={18} height={18} alt="searchIcon" />
-                            <PrimaryButton title="Indoor Activities" />
+                            <PrimaryButton title="Restaurants" />
                         </Link>
                     </div> : ""}
                 </div>
