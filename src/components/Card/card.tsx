@@ -4,6 +4,7 @@ import temp_image from "../../../public/images/attraction.png"
 import { ITravel, CardProps } from "../../../typings";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Carousel from "../Carousel";
 
 import WeatherForecast from "../WeatherForecast";
 
@@ -25,6 +26,45 @@ const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow, 
     };
 
     const logoImage = '/logo.svg';
+
+    const images = [
+        { 
+          images: {
+            original: {
+              url: 'image1.jpg' // URL for the first image
+            }
+          }
+        },
+        { 
+          images: {
+            original: {
+              url: 'image2.jpg' // URL for the second image
+            }
+          }
+        },
+
+        { 
+            images: {
+              original: {
+                url: 'image3.jpg' // URL for the second image
+              }
+            }
+          },
+          { 
+            images: {
+              original: {
+                url: 'image4.jpg' // URL for the second image
+              }
+            }
+          },
+          { 
+            images: {
+              original: {
+                url: 'image2.jpg' // URL for the second image
+              }
+            }
+          },
+      ];
 
 
     return (
@@ -51,19 +91,9 @@ const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow, 
 
             <div className="container-reviews">
                 <div>
-                    {locaImage[cardNumber].map((image, i) => (
-                        image && image.images && image.images.original && (
-                            <Image
-                                src={image.images.original.url}
-                                width={1000}
-                                height={1000}
-                                alt="attraction"
-                                className={styles.carousell}
-                            />
-                            
-                        )
-                    ))}
-                   
+                <Carousel images={locaImage[cardNumber]} />
+                    
+                  
                 </div>
                 <div style={{ display: 'flex', marginBottom: '10px' }}></div>
                 <div>
