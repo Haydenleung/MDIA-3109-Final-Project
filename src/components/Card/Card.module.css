@@ -56,6 +56,53 @@
     border: none;
 }
 
+.avatar{
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    overflow: hidden; 
+}
+
+.reviewContainer {
+   
+    padding: 20px;
+ 
+}
+
+.reviewItem {
+    border: 1px solid #ddd; 
+    padding: 2rem; 
+    margin-bottom: 40px; 
+}
+.reviewLine {
+    margin-bottom: 20px;
+}
+
+.aboutBox{
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+.addressImageContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.addressImageContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
 
 /* IPhone XR */
 

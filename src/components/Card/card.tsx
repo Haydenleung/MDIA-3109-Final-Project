@@ -24,6 +24,9 @@ const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow, 
         getApiDone(data);
     };
 
+    const logoImage = '/logo.svg';
+
+
     return (
         !show ?
             <div className={styles.container}>
@@ -57,57 +60,77 @@ const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow, 
                                 alt="attraction"
                                 className={styles.carousell}
                             />
+                            
                         )
                     ))}
+                   
                 </div>
-                <div>{locations[cardNumber].name}</div>
-                <div>{locations[cardNumber].address_obj.address_string}</div>
+                <div style={{ display: 'flex', marginBottom: '10px' }}></div>
                 <div>
-                    <Image
-                        src={locaDetail[cardNumber].rating_image_url}
-                        width={100}
-                        height={100}
-                        alt="photo"
-                        className={styles.ratingImage}
-                    />
-                    {locaDetail[cardNumber].num_reviews}
+       
+       </div>
+       <div>
+       <div className={styles.addressImageContainer}>
+       <div className={styles.addressInfo}>
+           <h1>{locations[cardNumber].name}</h1>
+           <div><h3>{locations[cardNumber].address_obj.address_string}</h3></div>
+       </div>
+       <div>
+           <Image 
+               src={locaDetail[cardNumber].rating_image_url} 
+               width={250} 
+               height={100} 
+               alt="photo" 
+               className={styles.ratingImage} 
+           />
+       </div>
+       </div>
+   
+   </div>
+   
+               <div className="aboutBox"><h2>About</h2></div>
+               <div>
+                   {locaDetail[cardNumber].description}
+               </div>
+   
+               <div><h2>Reviews</h2></div>
+               <div className={styles.reviewContainer}>
+   
+       <div>
+           {locaReview[cardNumber].map((review, i) => (
+               <div className={styles.reviewItem} key={i}>
+                   <Image 
+                       src={review.user.avatar.original || logoImage}
+                       width={100} 
+                       height={100} 
+                       alt="avatar" 
+                       className={styles.avatar}
+                   />
+                  
+                  <div className="reviewBox">
+                  <div style={{ marginBottom: '10px' }}><h3>{review.user.username}</h3></div>
+   
+                       <Image 
+                           src={review.rating_image_url} 
+                           width={100} 
+                           height={100} 
+                           alt="rating" 
+                           className={styles.ratingImage} 
+                       />
+                    <div style={{ marginBottom: '20px' }}/>
+                   <div style={{ marginBottom: '20px' }}>{review.published_date}</div>
+                       
+                   <div >{review.text}</div>
+                   </div>
                 </div>
-
-                <div>About</div>
-                <div>
-                    {locaDetail[cardNumber].description}
-                </div>
-
-                <div>Reviews</div>
-                <div>
-                    {locaReview[cardNumber].map((review, i) => (
-                        <div>
-                            <Image
-                                src={review.user.avatar.original}
-                                width={100}
-                                height={100}
-                                alt="avatar"
-                                className={styles.avatar}
-                            />
-
-                            <div>{review.user.username}</div>
-
-                            <Image
-                                src={review.rating_image_url}
-                                width={100}
-                                height={100}
-                                alt="rating"
-                                className={styles.ratingImage}
-                            />
-
-                            <div>{review.published_date}</div>
-                            <div>{review.rating}</div>
-                            <div>{review.text}</div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-    );
-};
-
-export default Card;
+              
+           ))}
+       </div>
+   </div>
+           </div>
+       );
+   };
+   
+   export default Card;
+   
+   
