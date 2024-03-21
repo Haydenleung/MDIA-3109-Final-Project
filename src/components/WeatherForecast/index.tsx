@@ -48,7 +48,7 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
     };
 
     fetchForecast();
-  }, []); 
+  }, [lat, lon, apiKey]); 
 
   if (!weather) {
     return <div>Loading...</div>;
