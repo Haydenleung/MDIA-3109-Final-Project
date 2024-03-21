@@ -15,39 +15,44 @@ const apiKey = process.env.NEXT_PUBLIC_API_WEATHER
 export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }) => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [weather, setWeather] = useState<any | null>(null);
+  const [lat, setLat] = useState<number | null>(null);
+  const [lon, setLon] = useState<number | null>(null);
 
   useEffect(() => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location},ca&appid=${apiKey}`;
-
-    async function fetchWeather() {
+    const fetchWeather = async () => {
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
       try {
         const response = await axios.get(url);
+        const { coord } = response.data;
         setWeatherData(response.data);
+        setLat(coord.lat);
+        setLon(coord.lon);
         getWeather(true);
       } catch (error) {
         console.error("Error:", error);
-        // getWeather(false);
+        //getWeather(false);
       }
-    }
+    };
 
     fetchWeather();
-  }, []);
-
-  const fetchWeather = async () => {
-    const res = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=49.28&lon=123.12&appid=0add98044a12afcd463bc2e26aa52e22&units=metric`
-    );
-    setWeather(res.data);
-  };
+  }, [location, getWeather]);
 
   useEffect(() => {
-    fetchWeather();
-  }, []);
+    const fetchForecast = async () => {
+      if (lat !== null && lon !== null) {
+        const res = await axios.get(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+        );
+        setWeather(res.data);
+      }
+    };
+
+    fetchForecast();
+  }, []); 
 
   if (!weather) {
     return <div>Loading...</div>;
   }
-
 
   return (
     <main>

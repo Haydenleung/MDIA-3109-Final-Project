@@ -1,27 +1,29 @@
-import { useState } from "react"
+import { useState } from "react";
+import { Activity, WeatherContext } from "@/context/WeatherContext";
 
-enum Activity {
-    Both = 'Both',
-    Indoor = 'Indoor',
-    Outdoor = 'Outdoor',
-}
 
-export default function EnumPage(){
-
+export default function EnumPage() {
     const [currentWeather, setCurrentWeather] = useState(Activity.Both);
 
-    return(
+    const handleClick = () => {
+        if (currentWeather === Activity.Both) {
+            setCurrentWeather(Activity.Indoor);
+        } else if (currentWeather === Activity.Indoor) {
+            setCurrentWeather(Activity.Outdoor);
+        } else {
+            setCurrentWeather(Activity.Both);
+        }
+    };
+
+    return (
         <>
-            {
-                Activity.Indoor && <p>Indoor Activity</p>
-            }
-
-            {
-                Activity.Outdoor && <p>Outdoor Activity</p>
-            }
-
-            {currentWeather === Activity.Indoor && <p>You should stay inside today!</p>}
-            {currentWeather === Activity.Outdoor && <p>Go outside today!</p>}
+            {currentWeather === Activity.Indoor && (
+                <p>You should stay inside today!</p>
+            )}
+            {currentWeather === Activity.Outdoor && (
+                <p>Go outside today!</p>
+            )}
+            <button onClick={handleClick}>What should I do today?</button>
         </>
-    )
+    );
 }
