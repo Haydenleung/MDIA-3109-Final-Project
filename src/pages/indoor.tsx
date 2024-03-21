@@ -11,6 +11,46 @@ import { useRouter } from 'next/router'
 
 const apiKey = process.env.NEXT_PUBLIC_API_TRIP
 
+
+const default_images = [
+    {
+        images: {
+            original: {
+                url: '/default/image1.jpeg' // URL for the first image
+            }
+        }
+    },
+    {
+        images: {
+            original: {
+                url: '/default/image2.jpeg' // URL for the second image
+            }
+        }
+    },
+
+    {
+        images: {
+            original: {
+                url: '/default/image3.jpeg' // URL for the second image
+            }
+        }
+    },
+    {
+        images: {
+            original: {
+                url: '/default/image4.jpeg' // URL for the second image
+            }
+        }
+    },
+    {
+        images: {
+            original: {
+                url: '/default/image5.jpeg' // URL for the second image
+            }
+        }
+    },
+];
+
 export const getServerSideProps: GetServerSideProps<IndoorProps> = async (context) => {
     const { prop1 } = context.query;
     const tripAdvisorUrl = `https://api.content.tripadvisor.com/api/v1/location/search?key=${apiKey}&searchQuery=${prop1}%20British%20Columbia&category=restaurants&language=en`;
@@ -30,11 +70,16 @@ export const getServerSideProps: GetServerSideProps<IndoorProps> = async (contex
             // Search Image
             const dataTwo = await Promise.all(data.slice(0, 5).map(async (data: any) => {
                 const urlTwo = `https://api.content.tripadvisor.com/api/v1/location/${data.location_id}/photos?language=en&key=${apiKey}`;
-                const response = await axios.get(urlTwo);
-                if (response.status !== 200) {
-                    throw new Error('Failed to fetch data from TripAdvisor API');
+                try {
+                    const response = await axios.get(urlTwo);
+                    if (response.status !== 200) {
+                        throw new Error('Failed to fetch data from TripAdvisor API');
+                    }
+                    return response.data.data;
+                } catch (error) {
+                    console.error('Fetch Error:', error);
+                    return default_images; // Return default object if error occurs
                 }
-                return response.data.data;
             }));
             // console.log(dataTwo);
 
