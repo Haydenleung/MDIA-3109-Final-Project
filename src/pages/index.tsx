@@ -54,9 +54,6 @@ export default function Home() {
           <Image className={"vector"} src={vector} width={500} height={500} alt="welcome" />
         </div>
       </div>
-
-      {/* <CurrentWeather /> */}
-      {/* <FiveDayWeather /> */}
     </main>
   );
 }
