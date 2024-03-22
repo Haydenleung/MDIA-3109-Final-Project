@@ -243,12 +243,10 @@ header {
 .questionContainer {
   text-align: center;
   margin-top: 50px;
-  padding: 20px;
 }
 
 .questionContainer h1 {
   color: #91118f;
-  padding: 1.5rem;
   font-size: 44px;
 }
 
@@ -274,7 +272,7 @@ header {
   font-weight: 800;
   margin-top: 20px;
   color: #91118f;
-  padding: 40px;
+  padding: 20px;
   text-align: center;
   border-radius: 5px;
   background-color: #e5f3ff;
