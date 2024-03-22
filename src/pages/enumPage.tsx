@@ -23,8 +23,6 @@ export default function EnumPage() {
       </button>
 
       <div className={"weatherInfo"}>
-      <Weather location={undefined} getWeather={(data: boolean) => {
-              }} />
 
       </div>
 
