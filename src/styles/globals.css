@@ -22,6 +22,14 @@ header {
   justify-content: center;
 }
 
+.searchContainer{
+  display: flex;
+}
+
+.luckContainer{
+  margin-left: 32px;
+}
+
 .page {
   width: 100%;
   height: 100vh;

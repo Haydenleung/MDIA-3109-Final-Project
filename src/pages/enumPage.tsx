@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Activity, WeatherContext } from "@/context/WeatherContext";
+import router from "next/router";
 
 
 export default function EnumPage() {
@@ -24,6 +25,7 @@ export default function EnumPage() {
                 <p>Go outside today!</p>
             )}
             <button onClick={handleClick}>What should I do today?</button>
+            <button onClick={() => router.push("/")}> GO HOME!</button>
         </>
     );
 }
