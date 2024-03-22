@@ -52,12 +52,12 @@ export default function Home() {
           </div>
 
           <div className={"luckContainer"}>
-            <h1>NOT SURE WHERE TO GO?</h1>
+            <h1>NOT SURE WHAT TO DO?</h1>
             <button
               className={"searchInput"}
               onClick={() => router.push("/enumPage")}
             >
-              TEST YOUR LUCK HERE!
+              Let us help you decide here!
             </button>
           </div>
         </div>

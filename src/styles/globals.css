@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 * {
   box-sizing: border-box;
@@ -22,11 +22,11 @@ header {
   justify-content: center;
 }
 
-.searchContainer{
+.searchContainer {
   display: flex;
 }
 
-.luckContainer{
+.luckContainer {
   margin-left: 32px;
 }
 
@@ -64,7 +64,7 @@ header {
   width: 100%;
   padding: 1rem;
   border-radius: 4px;
-  border: 1px solid var(--Light-Grey---Supplementary, #B6B6B6);
+  border: 1px solid var(--Light-Grey---Supplementary, #b6b6b6);
   padding-left: 2.8rem;
   font-size: 16px;
   font-weight: 500;
@@ -82,7 +82,7 @@ header {
 
 .landing {
   width: 100%;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border-radius: 16px;
   display: flex;
   flex-direction: row;
@@ -129,7 +129,7 @@ header {
 
 .weather-homepage {
   width: 100%;
-  background-color: #FFFF;
+  background-color: #ffff;
   border-radius: 16px;
   flex-grow: 1;
   display: flex;
@@ -157,10 +157,10 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #DB7F73;
-  border: solid 1px #DB7F73;
+  background-color: #db7f73;
+  border: solid 1px #db7f73;
   border-radius: 8px;
-  color: #FFFF;
+  color: #ffff;
   font-size: 16px;
   font-weight: 600;
 }
@@ -219,11 +219,87 @@ header {
   padding: 24px 0px;
 }
 
+/* enumPage */
+
+.homeButton {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: 800;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.homeButton:hover {
+  background-color: #dfdfdf;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.questionContainer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.questionContainer h1 {
+  color: #91118f;
+  padding: 1.5rem;
+  font-size: 44px;
+}
+
+.questionContainer button {
+  background-color: #ffffff;
+  border: 2px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.questionContainer button:hover {
+  background-color: #e5f3ff;
+}
+
+.weatherAdvice {
+  font-size: 44px;
+  font-weight: 800;
+  margin-top: 20px;
+  color: #91118f;
+  padding: 40px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #e5f3ff;
+}
+
+.weatherAdvice.indoor {
+  color: #1d4027;
+  background-color: #e5f3ff;
+}
+
+.weatherInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  border: 4px solid black;
+  border-right: none;
+  border-left: none;
+  padding: 40px;
+}
 
 /* IPhone XR */
 
-@media only screen and (device-width : 414px) and (device-height : 896px) {
-  
+@media only screen and (device-width: 414px) and (device-height: 896px) {
   body {
     padding-top: 8px;
     width: 100%;
@@ -239,20 +315,20 @@ header {
     font-size: 40px;
     text-align: center;
   }
-  
+
   .search {
     gap: 2rem;
     padding: 0;
     width: 100%;
     margin-top: 40px;
   }
-  
+
   .searchInput {
     border-radius: 8px;
     font-size: 32px;
     padding-left: 70px;
   }
-  
+
   .searchInput::placeholder {
     font-size: 32px;
   }
@@ -262,14 +338,14 @@ header {
     width: 28px;
     margin-left: 24px;
   }
-  
+
   .landing {
     flex-direction: column;
     gap: 0;
     padding: 2em;
     width: 200%;
   }
-  
+
   .text {
     width: 800px;
     display: flex;
@@ -277,74 +353,72 @@ header {
     gap: 0;
     margin-left: -150px;
   }
-  
+
   .landingHeading {
     font-size: 56px;
     width: 800px;
     margin-bottom: 1rem;
   }
-  
+
   .landingBody {
     font-size: 36px;
     width: 700px;
     margin-bottom: 4em;
   }
-  
+
   .vector {
     height: 100%;
   }
-  
 
   /* Weather Page */
-  
+
   .weather-homepage {
-    background-color: #FFFF;
+    background-color: #ffff;
     display: flex;
     flex-direction: column;
     gap: 4rem;
   }
-  
+
   .weather-main {
     width: 200%;
     margin-left: 2em;
     gap: 1rem;
   }
-  
+
   .question-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     width: 90%;
   }
-  
+
   .link {
-    background-color: #DB7F73;
-    border: solid 1px #DB7F73;
+    background-color: #db7f73;
+    border: solid 1px #db7f73;
     border-radius: 16px;
-    color: #FFFF;
+    color: #ffff;
     font-size: 32px;
     font-weight: 700;
     height: 100px;
     padding-left: 16px;
   }
-  
+
   .question-heading {
     margin-top: 1em;
     font-size: 32px;
   }
-  
+
   .iconL {
     height: 5%;
     width: 10%;
   }
 
-  
   /* Activities */
-  
+
   .cardContainer {
     padding: 0rem;
   }
-  
+
   .back {
     height: 4rem;
     width: 4rem;
@@ -360,89 +434,85 @@ header {
   }
 }
 
-
 /* Tablet */
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 900px)  { 
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 900px) {
   h1 {
     font-size: 40px;
     text-align: center;
   }
-  
+
   header {
     margin-top: 24px;
   }
-  
+
   .searchInput {
     font-size: 20px;
     padding-left: 64px;
   }
-  
+
   .searchInput::placeholder {
     font-size: 20px;
   }
-  
+
   .icon {
     position: absolute;
     margin: 1.4em;
     height: 24px;
     width: 24px;
   }
-  
+
   .landing {
     flex-direction: column;
     gap: 0rem;
-    padding: 2em;  
+    padding: 2em;
   }
-  
+
   .vector {
     height: 90%;
   }
-  
 
   /* Weather Page */
-  
+
   .weather-homepage {
-    background-color: #FFFF;
+    background-color: #ffff;
     display: flex;
     flex-direction: column;
     gap: 4rem;
   }
-  
+
   .weather-main {
     width: 80%;
     margin-left: 2em;
   }
-  
+
   .link {
-    background-color: #DB7F73;
-    border: solid 1px #DB7F73;
+    background-color: #db7f73;
+    border: solid 1px #db7f73;
     border-radius: 8px;
-    color: #FFFF;
+    color: #ffff;
     font-size: 24px;
     font-weight: 600;
     padding-left: 16px;
   }
-  
+
   .question-heading {
     color: #545454;
     font-size: 24px;
     font-weight: 500;
     margin: 0;
   }
-  
+
   .iconL {
     height: 2%;
   }
 
-  
   /* Activities */
-  
+
   .cardContainer {
     padding: 0rem;
   }
-  
+
   .back {
     height: 4rem;
     width: 4rem;
@@ -459,6 +529,4 @@ header {
   .tripadvisor-disclamer {
     font-size: 16px;
   }
-  
 }
-
