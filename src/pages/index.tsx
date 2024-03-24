@@ -51,7 +51,7 @@ export default function Home() {
             </form>
           </div>
 
-          <div className={"luckContainer"}>
+          {/* <div className={"luckContainer"}>
             <h1>NOT SURE WHAT TO DO?</h1>
             <button
               className={"searchInput"}
@@ -59,7 +59,7 @@ export default function Home() {
             >
               Let us help you decide here!
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 
