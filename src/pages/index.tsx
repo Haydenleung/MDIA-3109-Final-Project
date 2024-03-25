@@ -29,37 +29,25 @@ export default function Home() {
       <Header />
 
       <section className={"search"}>
-        <div className={"searchContainer"}>
-          <div>
-            <h1>WHERE DO YOU WANT TO GO? </h1>
-            <form onSubmit={onFormSubmit} className={"searchForm"}>
-              <Image
-                src={search}
-                className="icon"
-                width={18}
-                height={18}
-                alt="searchIcon"
-              />
-              <input
-                type="text"
-                onChange={handleChange}
-                value={location}
-                className={"searchInput"}
-                placeholder={"Search for City in Metro Vancouver"}
-              />
-              <button type="submit" className={"button"} />
-            </form>
-          </div>
-
-          {/* <div className={"luckContainer"}>
-            <h1>NOT SURE WHAT TO DO?</h1>
-            <button
+        <div>
+          <h1>WHERE DO YOU WANT TO GO? </h1>
+          <form onSubmit={onFormSubmit} className={"searchForm"}>
+            <Image
+              src={search}
+              className="icon"
+              width={18}
+              height={18}
+              alt="searchIcon"
+            />
+            <input
+              type="text"
+              onChange={handleChange}
+              value={location}
               className={"searchInput"}
-              onClick={() => router.push("/enumPage")}
-            >
-              Let us help you decide here!
-            </button>
-          </div> */}
+              placeholder={"Search for City in Metro Vancouver"}
+            />
+            <button type="submit" className={"button"} />
+          </form>
         </div>
       </section>
 

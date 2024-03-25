@@ -24,6 +24,8 @@ header {
 
 .searchContainer {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .luckContainer {
@@ -38,6 +40,7 @@ header {
   flex-direction: column;
   align-items: center;
   row-gap: 1.5rem;
+  min-width: 350px;
 }
 
 .button {
@@ -58,6 +61,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .searchInput {
@@ -150,6 +154,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .link {
@@ -186,6 +191,7 @@ header {
   flex-direction: column;
   align-items: center;
   row-gap: 1.5rem;
+  min-width: 400px;
 }
 
 .cardContainer {
@@ -297,12 +303,12 @@ header {
 
 /* IPhone XR */
 
-@media only screen and (device-width: 414px) and (device-height: 896px) {
+@media only screen and (max-width: 700px) {
   body {
     padding-top: 8px;
     width: 100%;
     /* height: 100%; */
-    margin-left: 15em;
+    /* margin-left: 15em; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -310,25 +316,26 @@ header {
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 4vw;
     text-align: center;
   }
 
   .search {
+    min-width: 10rem;
     gap: 2rem;
     padding: 0;
     width: 100%;
-    margin-top: 40px;
   }
 
   .searchInput {
     border-radius: 8px;
-    font-size: 32px;
+    font-size: 3vw;
     padding-left: 70px;
+    width: 100%;
   }
 
   .searchInput::placeholder {
-    font-size: 32px;
+    font-size: 3vw;
   }
 
   .icon {
@@ -341,31 +348,28 @@ header {
     flex-direction: column;
     gap: 0;
     padding: 2em;
-    width: 200%;
+    flex-grow: 0;
   }
 
   .text {
-    width: 800px;
     display: flex;
     flex-direction: column;
     gap: 0;
-    margin-left: -150px;
   }
 
   .landingHeading {
-    font-size: 56px;
-    width: 800px;
+    font-size: 5vw;
     margin-bottom: 1rem;
   }
 
   .landingBody {
-    font-size: 36px;
-    width: 700px;
+    font-size: 4vw;
     margin-bottom: 4em;
   }
 
   .vector {
     height: 100%;
+    width: 100%;
   }
 
   /* Weather Page */
@@ -375,11 +379,11 @@ header {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    justify-content: flex-start;
   }
 
   .weather-main {
-    width: 200%;
-    margin-left: 2em;
+    width: 100%;
     gap: 1rem;
   }
 
@@ -387,27 +391,32 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 90%;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 2rem;
   }
+
+
 
   .link {
     background-color: #db7f73;
     border: solid 1px #db7f73;
     border-radius: 16px;
     color: #ffff;
-    font-size: 32px;
+    font-size: 4vw;
     font-weight: 700;
-    height: 100px;
+    height: 80px;
     padding-left: 16px;
+    width: 80%;
   }
 
   .question-heading {
     margin-top: 1em;
-    font-size: 32px;
+    font-size: 4.5vw;
   }
 
   .iconL {
-    height: 5%;
+    height: auto;
     width: 10%;
   }
 
@@ -415,26 +424,27 @@ header {
 
   .cardContainer {
     padding: 0rem;
+    min-width: 350px;
   }
 
   .back {
-    height: 4rem;
+    height: 3rem;
     width: 4rem;
-    left: 4rem;
+    left: 2rem;
     top: 4rem;
   }
 
   .tripadvisor-disclamer {
     font-size: 24px;
-    width: 200%;
     margin-top: 3em;
     padding: 80px 0px;
   }
+
 }
 
 /* Tablet */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 900px) {
+@media only screen and (min-width: 701px)and (max-width: 1200px) {
   h1 {
     font-size: 40px;
     text-align: center;
@@ -479,10 +489,10 @@ header {
     gap: 4rem;
   }
 
-  .weather-main {
+  /* .weather-main {
     width: 80%;
     margin-left: 2em;
-  }
+  } */
 
   .link {
     background-color: #db7f73;

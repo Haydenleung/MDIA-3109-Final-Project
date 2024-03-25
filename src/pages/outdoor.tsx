@@ -7,21 +7,22 @@ import Header from '@/components/Header';
 import { OutdoorProps } from "../../typings";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { IImage } from "../../typings";
 
 const apiKey = process.env.NEXT_PUBLIC_API_TRIP
 
-const default_images = [
+const default_images: IImage[] = [
     {
         images: {
             original: {
-                url: '/default/image1.jpeg' // URL for the first image
+                url: '/default/image1.jpeg'
             }
         }
     },
     {
         images: {
             original: {
-                url: '/default/image2.jpeg' // URL for the second image
+                url: '/default/image2.jpeg'
             }
         }
     },
@@ -29,21 +30,21 @@ const default_images = [
     {
         images: {
             original: {
-                url: '/default/image3.jpeg' // URL for the second image
+                url: '/default/image3.jpeg'
             }
         }
     },
     {
         images: {
             original: {
-                url: '/default/image4.jpeg' // URL for the second image
+                url: '/default/image4.jpeg'
             }
         }
     },
     {
         images: {
             original: {
-                url: '/default/image5.jpeg' // URL for the second image
+                url: '/default/image5.jpeg'
             }
         }
     },

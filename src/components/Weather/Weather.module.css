@@ -1,4 +1,3 @@
-
 .weather_data_container {
   display: flex;
   align-items: flex-start;
@@ -123,72 +122,82 @@
 
 /* IPhone XR */
 
-@media only screen and (device-width : 414px) and (device-height : 896px) {
-  
+@media only screen and (max-width : 700px) {
+
   .weather_data_container {
     gap: 4rem;
-    margin-left: 1em;
+    margin-left: 0;
+    justify-content: center;
   }
-  
+
   .weatherContainer {
-    font-size: 80px;
+    font-size: 7vw;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .vectorContainerTabletPhone {
     display: flex;
     margin-bottom: 3em;
-    padding-left: 3em;
+  }
+
+  .vectorImage {
+    width: 100%;
+    height: auto;
   }
 
   .vectorContainerDesktop {
     display: none;
   }
-  
+
   .bigWeather {
     border-radius: 8px;
   }
-  
+
   .tempContainer {
-    gap: 5rem;
+    /* gap: 5rem; */
+    justify-content: center;
   }
-  
+
   .bigTemp {
-    font-size: 120px;
+    font-size: 24pt;
   }
-  
+
   .subInfo {
     gap: 1rem;
   }
-  
+
   .subText {
-    font-size: 40px;
+    font-size: 4vw;
     gap: 1rem;
   }
 
   .iconS {
     height: 100%;
   }
-  
+
   .errormsg {
     font-size: 3.2rem;
     font-weight: 800;
     line-height: 110%;
     margin: 0;
   }
-  
+
   .suberrormsg {
     font-size: 1.5rem;
     font-weight: 600;
     color: #545454;
     margin-bottom: 4rem;
   }
-  
+
 }
 
 /* Tablet */
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 900px)  { 
+@media only screen and (min-width : 700px) and (max-width : 1200px) {
   .weather_data_container {
     gap: 2rem;
     flex-direction: column-reverse;
@@ -212,11 +221,11 @@
   .vectorContainerDesktop {
     display: none;
   }
-  
+
   .bigWeather {
     border-radius: 8px;
   }
-  
+
   .subText {
     font-size: 24px;
   }

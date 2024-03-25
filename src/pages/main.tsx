@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Weather from "@/components/Weather";
 import { useRouter } from 'next/router'
 import Image from "next/image";
-
+import { Title } from './TitleEnum';
 
 export default function Main() {
     const router = useRouter()
@@ -41,20 +41,20 @@ export default function Main() {
 
                 <div className={"weather-main"}>
 
-                    <Weather 
-                        location={location} 
-                        getWeather={handleFromWeather} 
+                    <Weather
+                        location={location}
+                        getWeather={handleFromWeather}
                     />
 
                     {apiDone ? <div className="question-container">
                         <h3 className="question-heading">You are looking for:</h3>
                         <Link href={`/outdoor?prop1=${location}`} className={"link"}>
                             <Image src={'/images/outdoor.png'} className="iconL" width={24} height={24} alt="searchIcon" />
-                            <PrimaryButton title="Outdoor Activities" />
+                            <PrimaryButton title={Title.OutdoorActivities} />
                         </Link>
                         <Link href={`/indoor?prop1=${location}`} className={"link"}>
                             <Image src={'/images/indoor.png'} className="iconL" width={24} height={24} alt="searchIcon" />
-                            <PrimaryButton title="Restaurants" />
+                            <PrimaryButton title={Title.Restaurants} />
                         </Link>
                     </div> : ""}
 

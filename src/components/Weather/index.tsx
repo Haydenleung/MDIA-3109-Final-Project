@@ -49,7 +49,7 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
 
   return (
     <main>
-      
+
       {weatherData ? (
         <div className={styles.weather_data_container}>
 
@@ -81,39 +81,40 @@ export const Weather: React.FC<WeatherProps> = ({ location, getWeather }) => {
                 width={400}
                 height={400}
                 alt="welcome"
+                className={styles.vectorImage}
               />
-             </div>
+            </div>
 
             <div className={styles.tempContainer}>
               <div className={styles.bigTemp}>{(weatherData.main.temp - 273.15).toFixed(0)}°C</div>
               <div className={styles.subInfo}>
                 <div className={styles.subText}>
-                  <Image 
-                    src={temp} 
-                    className={styles.iconS} 
-                    width={15} 
-                    height={15} 
-                    alt="searchIcon" 
+                  <Image
+                    src={temp}
+                    className={styles.iconS}
+                    width={15}
+                    height={15}
+                    alt="searchIcon"
                   />
                   Feels Like: {(weatherData.main.feels_like - 273.15).toFixed(0)}°C
                 </div>
                 <div className={styles.subTemp}>
                   <div className={styles.subText}>
-                    <Image 
-                      src={up} 
-                      className={styles.iconS} 
-                      width={15} 
-                      height={15} 
-                      alt="searchIcon" 
+                    <Image
+                      src={up}
+                      className={styles.iconS}
+                      width={15}
+                      height={15}
+                      alt="searchIcon"
                     />
                     {(weatherData.main.temp_max - 273.15).toFixed(0)}°C</div>
                   <div className={styles.subText}>
-                    <Image 
-                      src={down} 
-                      className={styles.iconS} 
-                      width={15} 
-                      height={15} 
-                      alt="searchIcon" 
+                    <Image
+                      src={down}
+                      className={styles.iconS}
+                      width={15}
+                      height={15}
+                      alt="searchIcon"
                     />
                     {(weatherData.main.temp_min - 273.15).toFixed(0)}°C</div>
                 </div>

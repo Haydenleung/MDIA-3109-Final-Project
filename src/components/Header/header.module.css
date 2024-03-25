@@ -6,9 +6,9 @@
 
 /* IPhone XR */
 
-@media only screen and (device-width : 414px) and (device-height : 896px) {
+@media only screen and (max-width : 700px) {
     .logo {
-        height: 6rem;
-        margin: 0.7rem;
+        width: 40vw;
+        margin: 0.5rem;
     }
 }
