@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Weather from "@/components/Weather";
 import { useRouter } from 'next/router'
 import Image from "next/image";
-import { Title } from './TitleEnum';
+import { Title } from '../TitleEnum';
 
 export default function Main() {
     const router = useRouter()
