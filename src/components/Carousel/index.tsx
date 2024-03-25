@@ -1,17 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Carousel.module.css';
+import { CarouselProps } from "../../../typings";
 
-interface ImageData {
-  images: {
-    original: {
-      url: string;
-    };
-  };
-}
-
-interface CarouselProps {
-  images: ImageData[];
-}
 
 const Carousel: React.FC<CarouselProps> = ({ images }: CarouselProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
@@ -31,17 +21,17 @@ const Carousel: React.FC<CarouselProps> = ({ images }: CarouselProps) => {
   return (
     <div className={styles.carousel}>
       <button className={styles.prevButton} onClick={prevSlide}>
-      <img src="./arrowLeft.png" alt="arrow" width={50} height={50} />
+        <img src="./arrowLeft.png" alt="arrow" width={50} height={50} />
       </button>
       <img
         src={images[currentImageIndex].images.original.url}
         alt="attraction"
         className={styles.image}
-        
-        
+
+
       />
       <button className={styles.nextButton} onClick={nextSlide}>
-      <img src="./arrowRight.png" alt="arrow" width={50} height={50} />
+        <img src="./arrowRight.png" alt="arrow" width={50} height={50} />
       </button>
     </div>
   );

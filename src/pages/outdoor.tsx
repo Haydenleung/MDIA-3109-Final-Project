@@ -55,7 +55,6 @@ export const getServerSideProps: GetServerSideProps<OutdoorProps> = async (conte
     const tripAdvisorUrl = `https://api.content.tripadvisor.com/api/v1/location/search?key=${apiKey}&searchQuery=${prop1}%20British%20Columbia&category=attractions&language=en`;
     const city: string = prop1 ? String(prop1) : '';
 
-
     let retries = 3;
     while (retries > 0) {
         try {
@@ -147,7 +146,6 @@ const Outdoor = ({ locations, locaImage, locaDetail, locaReview, city }: Outdoor
     return (
         <main className={"cardPage"}>
             <Header />
-
             <button className={"back"} onClick={() => !show ? router.back() : setShow(!show)}>
                 <Image
                     src={"/images/back.svg"}

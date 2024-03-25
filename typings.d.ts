@@ -108,3 +108,15 @@ interface WeatherProps {
   location: any;
   getWeather: (data: boolean) => void;
 }
+
+interface ImageData {
+  images: {
+    original: {
+      url: string;
+    };
+  };
+}
+
+interface CarouselProps {
+  images: ImageData[];
+}

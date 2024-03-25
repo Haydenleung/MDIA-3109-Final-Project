@@ -34,18 +34,13 @@ export default function Main() {
 
     return (
         <main className={"page"}>
-
             <Header />
-
             <div className={"weather-homepage"}>
-
                 <div className={"weather-main"}>
-
                     <Weather
                         location={location}
                         getWeather={handleFromWeather}
                     />
-
                     {apiDone ? <div className="question-container">
                         <h3 className="question-heading">You are looking for:</h3>
                         <Link href={`/outdoor?prop1=${location}`} className={"link"}>
@@ -57,11 +52,8 @@ export default function Main() {
                             <PrimaryButton title={Title.Restaurants} />
                         </Link>
                     </div> : ""}
-
                 </div>
-
             </div>
-
         </main>
     );
 }

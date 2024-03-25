@@ -9,7 +9,6 @@ import down from "../../../public/images/down.svg"
 import { WeatherProps } from "../../../typings";
 import Link from "next/link";
 
-
 const apiKey = process.env.NEXT_PUBLIC_API_WEATHER
 
 export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }) => {
@@ -48,7 +47,7 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
     };
 
     fetchForecast();
-  }, [lat, lon, apiKey]); 
+  }, [lat, lon, apiKey]);
 
   if (!weather) {
     return <div>Loading...</div>;

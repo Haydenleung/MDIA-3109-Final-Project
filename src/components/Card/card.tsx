@@ -27,46 +27,6 @@ const Card = ({ locations, locaImage, locaDetail, locaReview, show, handleShow, 
 
   const logoImage = '/logo.svg';
 
-  const images = [
-    {
-      images: {
-        original: {
-          url: 'image1.jpg' // URL for the first image
-        }
-      }
-    },
-    {
-      images: {
-        original: {
-          url: 'image2.jpg' // URL for the second image
-        }
-      }
-    },
-
-    {
-      images: {
-        original: {
-          url: 'image3.jpg' // URL for the second image
-        }
-      }
-    },
-    {
-      images: {
-        original: {
-          url: 'image4.jpg' // URL for the second image
-        }
-      }
-    },
-    {
-      images: {
-        original: {
-          url: 'image2.jpg' // URL for the second image
-        }
-      }
-    },
-  ];
-
-
   return (
     !show ?
       <div className={styles.container}>
