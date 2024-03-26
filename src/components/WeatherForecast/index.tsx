@@ -3,15 +3,18 @@ import axios from "axios";
 import { WeatherData } from "../../../typings";
 import styles from "./WeatherForecast.module.css";
 import Image from "next/image";
-import temp from "../../../public/images/temp.svg"
-import up from "../../../public/images/up.svg"
-import down from "../../../public/images/down.svg"
+import temp from "../../../public/images/temp.svg";
+import up from "../../../public/images/up.svg";
+import down from "../../../public/images/down.svg";
 import { WeatherProps } from "../../../typings";
 import Link from "next/link";
 
-const apiKey = process.env.NEXT_PUBLIC_API_WEATHER
+const apiKey = process.env.NEXT_PUBLIC_API_WEATHER;
 
-export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }) => {
+export const WeatherForecast: React.FC<WeatherProps> = ({
+  location,
+  getWeather,
+}) => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [weather, setWeather] = useState<any | null>(null);
   const [lat, setLat] = useState<number | null>(null);
@@ -55,7 +58,6 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
 
   return (
     <main>
-
       {weatherData ? (
         <div className={styles.weather_forecast_container}>
           <div className={styles.weatherOuterContainer}>
@@ -68,7 +70,9 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
             />
 
             <div className={styles.tempContainer}>
-              <div className={styles.bigTemp}>{(weatherData.main.temp - 273.15).toFixed(0)}°C</div>
+              <div className={styles.bigTemp}>
+                {(weatherData.main.temp - 273.15).toFixed(0)}°C
+              </div>
               <div className={styles.subInfo}>
                 <div className={styles.subText}>
                   <Image
@@ -78,7 +82,8 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
                     height={15}
                     alt="searchIcon"
                   />
-                  Feels Like: {(weatherData.main.feels_like - 273.15).toFixed(0)}°C
+                  Feels Like:{" "}
+                  {(weatherData.main.feels_like - 273.15).toFixed(0)}°C
                 </div>
                 <div className={styles.subTemp}>
                   <div className={styles.subText}>
@@ -107,13 +112,17 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
           </div>
           <div>
             <div className={styles.forecast_container}>
-
               {weather.list
                 .filter((x: any) => x.dt_txt.includes("00:00:00"))
                 .map((x: any) => (
-
                   <div key={x.dt} className={styles.daily_forecast}>
-                    <p>{new Date(x.dt * 1000).toDateString().split(' ').slice(1, 3).join(' ')}</p>
+                    <p>
+                      {new Date(x.dt * 1000)
+                        .toDateString()
+                        .split(" ")
+                        .slice(1, 3)
+                        .join(" ")}
+                    </p>
                     <div>
                       <Image
                         src={`/icons/${weatherData.weather[0].icon}.png`}
@@ -122,18 +131,21 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
                         height={32}
                         alt="searchIcon"
                       />
-                      <p>{x.main.temp} &deg;C</p>
+                      <p>{Math.round(x.main.temp)} &deg;C</p>
                     </div>
                   </div>
                 ))}
             </div>
-
           </div>
         </div>
       ) : (
         <>
-          <p className={styles.errormsg}>No weather data to show right now :(</p>
-          <p className={styles.suberrormsg}>Try to search a city in Metro Vancouver</p>
+          <p className={styles.errormsg}>
+            No weather data to show right now :(
+          </p>
+          <p className={styles.suberrormsg}>
+            Try to search a city in Metro Vancouver
+          </p>
           <Link href="/">
             <button className={styles.returnbtn}>Search Again</button>
           </Link>
@@ -141,6 +153,6 @@ export const WeatherForecast: React.FC<WeatherProps> = ({ location, getWeather }
       )}
     </main>
   );
-}
+};
 
 export default WeatherForecast;
